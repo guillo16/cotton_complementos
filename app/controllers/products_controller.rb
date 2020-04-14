@@ -1,15 +1,23 @@
 class ProductsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show]
+  before_action :set_products, only: %i[show destroy]
   def index
   end
 
   def show
-    @product = Product.find(params[:id])
   end
 
   def new
+    @product = Product.new
   end
 
   def create
+    @product = Product.new(product_params)
+    if @product.save
+      redirect_to product_path(@product)
+    else
+      render :new
+    end
   end
 
   def update
@@ -19,5 +27,15 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def set_products
+    @product = Product.find(params[:id])
+  end
+
+  def product_params
+    params.require(:product).permit(:title, :photo, :category_id)
   end
 end
