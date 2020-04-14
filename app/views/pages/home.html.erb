@@ -1,7 +1,5 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 <% @divisions.each do |division| %>
-<%= link_to division_path(division) do %>
-<%= division.title %>
-<% end %>
+<%= render 'shared/division_cards', division: division %>
 <% end %>
