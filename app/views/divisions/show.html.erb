@@ -2,17 +2,15 @@
 <div class="d-flex justify-content-between">
   <div class= 'category'>
     <% @division.categories.each do |category| %>
-   <p><%= link_to category.title, category_path(category)  %></p>
-   <% end %>
- </div>
- <div>
-  <% @division.categories.each do |category| %>
-  <% category.products.each do |product| %>
-  <%= render 'shared/product_card', product: product %>
-  <% end %>
-
-  <% end %>
-</div>
-
+    <p><%= link_to category.title, category_path(category)  %></p>
+    <% end %>
+  </div>
+  <div>
+    <% @division.categories.each do |category| %>
+    <% category.products.each do |product| %>
+    <%= render 'shared/product_card', product: product %>
+    <% end %>
+    <% end %>
+  </div>
 </div>
 
