@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'divisions/show'
   devise_for :users
   root to: 'pages#home'
+  resources :divisions, only: :show
   resources :categories, only: :show
   resources :products do
     resources :variants, only: [:new, :create]
