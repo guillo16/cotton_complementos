@@ -3,6 +3,7 @@
   <%= link_to division.title, division_path(division)  %>
   <% end %>
 </div>
+<%= @category.division.title%>/ <%= @category.title %>
 <div class="d-flex justify-content-between">
   <div>
     <h1><%= @category.title %></h1>

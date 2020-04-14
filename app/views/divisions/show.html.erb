@@ -1,5 +1,5 @@
-<h1><%= @division.title %></h1>
-<div class="d-flex justify-content-between">
+<p><%= @division.title %>/Todos los articulos</p>
+<div class="md-d-flex justify-content-between">
   <div class= 'category'>
     <% @division.categories.each do |category| %>
     <p><%= link_to category.title, category_path(category)  %></p>
