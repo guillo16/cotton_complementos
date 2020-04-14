@@ -5,7 +5,7 @@
     <p><%= link_to category.title, category_path(category)  %></p>
     <% end %>
   </div>
-  <div>
+  <div class="product-container">
     <% @division.categories.each do |category| %>
     <% category.products.each do |product| %>
     <%= render 'shared/product_card', product: product %>
