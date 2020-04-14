@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_14_123549) do
+ActiveRecord::Schema.define(version: 2020_04_14_181725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
+    t.string "title"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "division_id"
+    t.index ["division_id"], name: "index_categories_on_division_id"
+  end
+
+  create_table "divisions", force: :cascade do |t|
     t.string "title"
     t.string "photo"
     t.datetime "created_at", null: false
@@ -52,6 +61,7 @@ ActiveRecord::Schema.define(version: 2020_04_14_123549) do
     t.index ["product_id"], name: "index_variants_on_product_id"
   end
 
+  add_foreign_key "categories", "divisions"
   add_foreign_key "products", "categories"
   add_foreign_key "variants", "products"
 end
