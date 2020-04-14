@@ -1,0 +1,8 @@
+<div class="product_card">
+  <%= link_to product_path(product) do %>
+  <img src="<%= product.photo %>" alt="">
+  <h2><%= product.title %></h2>
+  <p><%= product.category.title %></p>
+  <p>100 pesos</p>
+  <% end %>
+</div>
