@@ -1,0 +1,33 @@
+//categories button in categories/show.html.erb
+.mobile-button {
+  width: 90%;
+  margin: 0 auto;
+  h2 {
+    margin-bottom: 15px;
+    color: #26262c;
+    font-size: 22px;
+  }
+  p {
+    color: #5c5c5f;
+    font-size: 13px;
+    margin-top: 10px;
+  }
+}
+.categories-button {
+  width: 200px;
+  padding: 10px 0px;
+  font-size: 13px;
+  background-color: white;
+  border-color: lightgrey;
+  i {
+    margin-left: 76px;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.dropdown-menu {
+  width: 200px !important;
+  font-size: 13px;
+}
