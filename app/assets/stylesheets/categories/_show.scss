@@ -15,7 +15,7 @@
   color: black;
   width: 90%;
   margin: 15px auto;
-  margin-top: 20px;
+  margin-top: 50px;
   text-align: center;
 }
 //medium part of the page where the d flex is apply
@@ -115,10 +115,6 @@
     display: block;
   }
 
-  .category-path {
-    margin: 15px auto;
-    text-align: left;
-  }
   .product-title {
     display: none;
   }
@@ -127,7 +123,8 @@
     font-size: 13px;
     color: black;
     width: 90%;
-    text-align: center;
+    text-align: left;
+    margin-top: 30px;
   }
 
   .product-container {
