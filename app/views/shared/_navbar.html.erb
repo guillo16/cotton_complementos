@@ -1,6 +1,7 @@
 <div class="navbar navbar-expand-lg navbar-light navbar-home fixed-top" id= "navbar">
   <%= link_to root_path, class: "navbar-brand" do %>
-  <h2>COTTON-COMPLEMENTOS</h2>
+  <h2>COTTON</h2>
+  <h2>COMPLEMENTOS</h2>
   <% end %>
 
   <div class="d-flex align-items-center d-lg-none ml-3">
@@ -14,11 +15,11 @@
   </button>
 </div>
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-  <%= link_to "Shop", "#", class: "nav-link" %>
-  <%= link_to "Stories", "#", class: "nav-link" %>
-  <%= link_to "About", "#", class: "nav-link" %>
-  <%= link_to "About", "#", class: "nav-link" %>
-  <%= link_to "About", "#", class: "nav-link" %>
+  <%= link_to "Cocina", "#", class: "nav-link" %>
+  <%= link_to "Fragancias de hogar", "#", class: "nav-link" %>
+  <%= link_to "Indumentaria", "#", class: "nav-link" %>
+  <%= link_to "Manos & Cuerpo", "#", class: "nav-link" %>
+  <%= link_to "Decoracion", "#", class: "nav-link" %>
   <% if user_signed_in? %>
   <li class="nav-item  d-sm-none">
     <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>

@@ -8,18 +8,20 @@
     font-size: 13px;
     font-weight: bold;
     margin-bottom: 0px;
+    text-align: center;
   }
   a {
+    font-size: 14px;
+    color: white;
+  }
+  i {
     color: white;
   }
 }
 
 .navbar-home .navbar-collapse {
-  flex: 0 0 30%;
+  flex-grow: 0;
 }
-
-
-
 
 .navbar-home-white {
   background-color: white;
@@ -28,6 +30,10 @@
 
   }
    a {
+    color: #26262c;
+  }
+
+  i {
     color: black;
   }
 }
