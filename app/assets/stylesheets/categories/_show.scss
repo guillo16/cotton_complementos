@@ -1,0 +1,39 @@
+.division-list {
+  a {
+    font-size: 13px;
+  }
+
+}
+.category-wrapper {
+  display: flex;
+}
+
+.category-sidebar{
+
+}
+
+.category-path {
+  font-size: 13px;
+  color: lightgrey;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.mobile-button-container{
+  display: none;
+}
+
+
+@media(max-width: 700px) {
+  .category-wrapper {
+    display: block;
+  }
+  .category-sidebar{
+  display: none;
+}
+
+.mobile-button-container{
+  display: block;
+}
+}
