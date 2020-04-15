@@ -1,3 +1,4 @@
+//top part of the page
 .division-list {
   text-align: center;
   padding: 10px;
@@ -8,12 +9,21 @@
     color: black;
   }
 }
+ //title that is at the top of the wrapper
+ .category-path {
+  font-size: 13px;
+  color: black;
+  width: 90%;
+  margin: 15px auto;
+  margin-top: 20px;
+  text-align: center;
+}
+//medium part of the page where the d flex is apply
 .category-wrapper {
   display: flex;
   width: 90%;
   margin: 0 auto;
 }
-
 .category-sidebar{
   flex: 0 0 20%;
   h3 {
@@ -23,33 +33,33 @@
    padding-bottom: 10px;
    border-bottom: 1px solid lightgrey;
    margin-bottom: 0px;
-  }
-  h1 {
-    margin-top: 10px;
-    font-size: 14px;
+ }
+ h1 {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #26262c;
+  padding-bottom: 0px;
+}
+p {
+  border-bottom: 2px solid lightgrey;
+  width: 16px;
+}
+h2 {
+  font-size: 14px;
+  color: #26262c;
+  padding-bottom: 16px;
+}
+a {
+  &:hover {
     color: #26262c;
-    padding-bottom: 0px;
   }
-  p {
-    border-bottom: 2px solid lightgrey;
-    width: 16px;
-  }
-  h2 {
-    font-size: 14px;
-    color: #26262c;
-    padding-bottom: 16px;
-  }
-  a {
-    &:hover {
-      color: #26262c;
-    }
-  }
-  h4 {
-    color: #26262c;
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 0px;
-  }
+}
+h4 {
+  color: #26262c;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
 }
 
 .filter-sidebar {
@@ -58,19 +68,6 @@
   align-items: center;
   padding: 12px 0px;
   border-bottom: 1px solid lightgrey;
-}
-
-.category-path {
-  font-size: 13px;
-  color: black;
-  width: 90%;
-  margin: 15px auto;
-  margin-top: 20px;
-  text-align: center;
-}
-
-.mobile-button-container{
-  display: none;
 }
 //product part of the page
 .product-title {
@@ -95,10 +92,19 @@
   grid-gap: 16px;
   padding: 16px;
 }
+//mobile part of the page is hidden in full screen
+.mobile-button-container{
+  display: none;
+}
 
-
-
-
+@media(max-width: 1025px) {
+  .product-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 16px;
+    padding: 16px;
+  }
+}
 
 @media(max-width: 700px) {
   .category-wrapper {
