@@ -1,0 +1,46 @@
+.division-cards-wrapper {
+  text-align: center;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+  .division-minicard-container {
+   display: inline-block;
+   padding: 10px;
+   a {
+    &:hover {
+      color: white;
+    }
+   }
+ }
+}
+
+.division-minicard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 126px;
+  background-size: cover;
+  background-position: center;
+  margin-right: 10px;
+  width: 226px;
+  border-radius: 6px;
+  h1 {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+  }
+}
+
+@media(max-width: 686px) {
+  .division-minicard {
+  height: 100px;
+  margin-right: 5px;
+  width: 170px;
+  h1 {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+  }
+}
+}
