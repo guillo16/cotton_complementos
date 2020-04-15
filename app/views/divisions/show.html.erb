@@ -1,4 +1,10 @@
-<p></p>
+<div class="division-cards-wrapper">
+  <% @divisions.each do |division| %>
+  <div class="division-minicard-container">
+    <%= render 'shared/division_minicards', division: division %>
+  </div>
+  <% end %>
+</div>
 <h2 class="category-path"><%= @division.title %> / Todos los articulos </h2>
 <div class="mobile-button-container">
   <h2><%= @division.title %></h2>
