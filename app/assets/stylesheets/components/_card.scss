@@ -1,5 +1,5 @@
 .product_card {
-display: inline-block;
+  display: inline-block;
   h2 {
     font-size: 13px;
     font-weight: bold;
@@ -18,20 +18,22 @@ display: inline-block;
 }
 //cards in the homepage
 .product_home_card {
-display: inline-block;
+  display: inline-block;
   h2 {
     font-size: 13px;
     font-weight: bold;
-    color: black;
+    color: #26262c;
     margin-top: 10px;
+    text-align: left;
   }
   p {
     font-size: 13px;
     color: black;
   }
   img {
-    width: 300px;
+    width: 200px;
     height: 300px;
     object-fit: cover;
+    margin-right: 36px;
   }
 }

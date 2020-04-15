@@ -1,72 +1,14 @@
-<div class="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://images.unsplash.com/photo-1519643381401-22c77e60520e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1953&q=80);">
-  <div class="container">
-    <h1>Cotton-Complementos</h1>
+<section id="home-banner">
+  <div class="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://images.unsplash.com/photo-1519643381401-22c77e60520e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1953&q=80);">
+      <h1>Cotton-Complementos</h1>
   </div>
-</div>
-<div class="home-cards">
-  <div class="column">
-    <% @divisions.where(title: "Indumentaria").each do |division| %>
-    <%= link_to division_path(division) do  %>
-    <div class="card-division-1" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= division.photo %>)">
-      <div class="text-center">
-        <h2><%= division.title %></h2>
-        <button class="home-button">Ver Mas</button>
-      </div>
-    </div>
-    <% end %>
-    <% end %>
-    <% @divisions.where(title: "Cocina").each do |division| %>
-    <%= link_to division_path(division) do  %>
-    <div class="card-division-2" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= division.photo %>)">
-      <div class="text-center">
-        <h2><%= division.title %></h2>
-        <button class="home-button">Ver Mas</button>
-      </div>
-    </div>
-    <% end %>
-    <% end %>
-  </div>
-  <div class="column">
-    <% @divisions.where(title: "Decoracion").each do |division| %>
-    <%= link_to division_path(division) do  %>
-    <div class="card-division-2" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= division.photo %>)">
-      <div class="text-center">
-        <h2><%= division.title %></h2>
-        <button class="home-button">Ver Mas</button>
-      </div>
-    </div>
-    <% end %>
-    <% end %>
-    <% @divisions.where(title: "Manos y cuerpos").each do |division| %>
-    <%= link_to division_path(division) do  %>
-    <div class="card-division-1" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= division.photo %>)">
-      <div class="text-center">
-        <h2><%= division.title %></h2>
-        <button class="home-button">Ver Mas</button>
-      </div>
-    </div>
-    <% end %>
-    <% end %>
-  </div>
-</div>
-<div class="home-card-footer">
-  <% @divisions.where(title: "Fragancias de hogar").each do |division| %>
-  <%= link_to division_path(division) do  %>
-  <div class="card-division-footer" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= division.photo %>)">
-    <div class="text-center">
-      <h2><%= division.title %></h2>
-      <button class="home-button">Ver Mas</button>
-    </div>
-  </div>
-  <% end %>
-  <% end %>
-</div>
+</section>
+<section id="home-cards">
+  <%= render 'home_cards' %>
+</section>
+<section id="products-cards">
+  <%= render 'home_products' %>
+</section>
 
-<div class="home-product-wrapper">
-  <h3>Mas Vendidos</h3>
-  <div class="division-cards-wrapper">
-   <% @products.last(8).each do |product| %>
-     <%= render 'shared/product_home_card', product: product %>
-     <% end %>
- </div>
-</div>
+
+
