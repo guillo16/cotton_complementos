@@ -3,10 +3,7 @@
   <%= link_to division.title, division_path(division)  %>
   <% end %>
 </div>
-
 <h2 class="category-path"><%= @category.division.title%> / <%= @category.title %></h2>
-
-
 <div class="mobile-button-container">
   <h2><%= @category.title %></h2>
   <div class="mobile-button">
@@ -31,10 +28,6 @@
   </div>
   <p><%= @category.products.count %> productos</p>
 </div>
-
-
-
-
 <div class="category-wrapper">
   <div class="category-sidebar">
     <h3>Categorias:</h3>
