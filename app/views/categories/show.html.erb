@@ -1,3 +1,4 @@
+<%= render 'shared/main_navbar' %>
 <div class="division-list">
   <% @divisions.each do |division| %>
   <%= link_to division.title, division_path(division)  %>

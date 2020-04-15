@@ -1,0 +1,40 @@
+<div class="navbar navbar-expand-lg navbar-light main-navbar fixed-top" id= "navbar">
+  <%= link_to root_path, class: "navbar-brand" do %>
+  <h2>COTTON</h2>
+  <h2>COMPLEMENTOS</h2>
+  <% end %>
+
+  <div class="d-flex align-items-center d-lg-none ml-3">
+   <div class="cart-item">
+    <span class="icon is-small">
+      <i class="fas fa-shopping-bag">&nbsp;&nbsp;</i>
+    </span>
+  </div>
+  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars"></i>
+  </button>
+</div>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <%= link_to "Cocina", "#", class: "nav-link" %>
+  <%= link_to "Fragancias de hogar", "#", class: "nav-link" %>
+  <%= link_to "Indumentaria", "#", class: "nav-link" %>
+  <%= link_to "Manos & Cuerpo", "#", class: "nav-link" %>
+  <%= link_to "Decoracion", "#", class: "nav-link" %>
+  <% if user_signed_in? %>
+  <li class="nav-item  d-sm-none">
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+  </li>
+  <% else %>
+  <%= link_to "Log in", destroy_user_session_path, method: :delete, class: "nav-link" %>
+  <% end %>
+</ul>
+</div>
+
+<div class="d-none d-lg-block guillo">
+  <div class="cart-item">
+    <span class="icon is-small">
+      <i class="fas fa-shopping-bag"></i>
+    </span>
+  </div>
+</div>
+</div>
