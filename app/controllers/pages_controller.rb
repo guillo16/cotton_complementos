@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @divisions = Division.all
+    @products = Product.all
   end
 end

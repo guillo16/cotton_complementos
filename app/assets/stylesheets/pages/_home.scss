@@ -7,6 +7,14 @@
  color: white;
 }
 
+.home-button {
+  background: transparent;
+  border: 1px solid white;
+  padding: 10px 20px;
+  font-size: 15px;
+  color: white;
+}
+
 
 .home-cards {
   width: 90%;
@@ -35,7 +43,7 @@
   margin-bottom: 20px;
   h2 {
     color: white;
-    font-size: 24px;
+    font-size: 36px;
     font-weight: bold;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     text-decoration: none;
@@ -52,7 +60,7 @@
   margin-bottom: 20px;
   h2 {
     color: white;
-    font-size: 24px;
+    font-size: 36px;
     font-weight: bold;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     text-decoration: none;
@@ -63,22 +71,41 @@
   width: 90%;
   margin: 0 auto;
   padding: 0 14px;
+  a{
+    text-decoration: none;
+  }
 
 }
 .card-division-footer{
   background-size: cover;
   background-position: center;
-  height: 50vh;
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
   h2 {
     color: white;
-    font-size: 24px;
+    font-size: 36px;
     font-weight: bold;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    text-decoration: none;
+
+  }
+
+}
+
+.home-product-wrapper {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 14px;
+  h3 {
+    color: #26262c;
+    font-size: 20px;
+    padding-bottom: 12px;
+    text-align: center;
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: 22px;
+    margin-top: 60px;
   }
 }
 
@@ -96,6 +123,10 @@
   }
   .card-division-2 {
     height: 400px;
+  }
+
+  .home-card-footer {
+    padding: 0px;
   }
   .card-division-footer{
     height: 400px;
