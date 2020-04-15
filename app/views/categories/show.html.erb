@@ -13,7 +13,7 @@
         Categorias <i class="fas fa-chevron-down"></i>
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <p class="dropdown-item" style="margin-bottom: 0px; font-size:13px; margin-top: 0px;text-decoration: underline; color: #26262c;"><%= @category.title %></p>
+        <p class="dropdown-item" style="margin-bottom: 0px; font-size:13px; margin-top: 0px;text-decoration: underline; color: #167a92;"><%= @category.title %></p>
         <div class="dropdown-divider"></div>
         <% division_title =  @category.division.title %>
         <% category_links = @categories.filter { |category| category.division.title == division_title } %>

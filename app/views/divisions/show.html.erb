@@ -15,7 +15,7 @@
         Categorias <i class="fas fa-chevron-down"></i>
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <p class="dropdown-item" style="margin-bottom: 0px; font-size:13px; margin-top: 0px;text-decoration: underline; color: #26262c;"><%= @division.title %></p>
+        <p class="dropdown-item" style="margin-bottom: 0px; font-size:13px; margin-top: 0px;text-decoration: underline; color: #167a92;"><%= @division.title %></p>
         <div class="dropdown-divider"></div>
         <% @division.categories.each do |category| %>
         <p><%= link_to category.title, category_path(category), class: "dropdown-item"  %></p>
