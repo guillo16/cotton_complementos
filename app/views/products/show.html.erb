@@ -1,88 +1,41 @@
 <%= render 'shared/main_navbar' %>
-<div class="variant-container">
-  <h2>Crear Talle para <%= @product.title %></h2>
-  <%= render 'variants/new' %>
-  <h2>Inventario de <%= @product.title %></h2>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">Talle</th>
-        <th scope="col">Stock</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @product.variants.each do |variant| %>
-      <tr>
-        <td><%= variant.title %></td>
-        <td><%= variant.stock %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-<div class="product-show-container d-lg-flex">
-  <div class="product-image">
-    <img src="<%= @product.photo %>" alt="">
-  </div>
-  <div class="product-show-content p-lg-3 ">
-    <p><%= @product.category.division.title %> / <%= @product.category.title %></p>
-    <h2><%= @product.title.upcase %></h2>
-    <h3>$98.00</h3>
-    <div class="product-show-variants">
-      <!-- form para comprar muy complejo   -->
-      <div>
-        <%= form_tag line_items_path do %>
-        <%= hidden_field_tag 'product_id', @product.id %>
+<section id="variants_container">
+  <div class="variant-container">
+    <h2>Crear Talle para <%= @product.title %></h2>
+    <%= render 'variants/new' %>
+    <h2>Inventario de <%= @product.title %></h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Talle</th>
+          <th scope="col">Stock</th>
+        </tr>
+      </thead>
+      <tbody>
         <% @product.variants.each do |variant| %>
-        <% if variant.title == 'unico' %>
-        <%= hidden_field_tag 'variant_id', variant.id %>
-
-        <% else %>
-        <div class="label-guillo">
-          <% if variant.stock == 0 %>
-
-          <% else %>
-          <label>
-            <input type="radio" name="variant_id" value="<%= variant.id %>" checked /><%= variant.title %>
-          </label>
-          <% end %>
-          <% end %>
-        </div>
+        <% unless variant.stock == 0 %>
+        <tr>
+          <td><%= variant.title %></td>
+          <td><%= variant.stock %></td>
+        </tr>
         <% end %>
-        <%= juan = @product.variants.sum(:stock) %>
-
-
-        <% if juan >= 1 %>
-        <%= submit_tag 'add to cart', class: 'btn btn-primary' %>
-        <% else %>
-        no podes comprar
         <% end %>
-
-
-        <% end %>
-      </div>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section id="product-content">
+  <%= render 'product_content' %>
+</section>
+<section id="product-footer">
+  <div class="show-product-footer">
+    <div class="product-display">
+      <h4>Tambien te puede interesar</h4>
     </div>
-    <div class="product-show-details d-flex justify-content-between align-items-center">
-      <h4>Detalles del producto</h4> +
-    </div>
-    <div class="product-show-details-2 d-flex justify-content-between align-items-center">
-      <h4>Como comprar</h4> +
+    <div class="division-cards-wrapper">
+      <% @products.last(8).each do |product| %>
+      <%= render 'shared/product_home_card', product: product %>
+      <% end %>
     </div>
   </div>
-</div>
-<div class="show-product-footer">
-  <div class="product-display">
-    <h4>Tambien te puede interesar</h4>
-  </div>
-  <div class="division-cards-wrapper">
-    <% @products.last(8).each do |product| %>
-    <%= render 'shared/product_home_card', product: product %>
-    <% end %>
-  </div>
-</div>
-
-
-
-
-
-
+</section>
