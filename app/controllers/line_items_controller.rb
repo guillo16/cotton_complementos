@@ -26,7 +26,7 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.json
   def create
-    product = Car.find(params[:product_id])
+    product = Product.find(params[:product_id])
     variant = Variant.find(params[:variant_id])
     variant.decrement!(:stock)
     @line_item = @cart.add_car(product, variant)
