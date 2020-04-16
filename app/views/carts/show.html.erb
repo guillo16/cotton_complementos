@@ -1,13 +1,15 @@
-<div class="cart-container">
-  <div class="keep-shopping">
-    <h2><i class="fas fa-shopping-bag"></i> Carrito de Compras</h2>
-    <p><%= link_to 'X', root_path %></p>
-  </div>
-  <div class="cart-items">
-    <%= render(@cart.line_items) %>
-  </div>
-  <div class="delete-cart">
-    <p><%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "btn btn-danger" %></p>
+<div class="keep-shopping">
+  <h2><i class="fas fa-shopping-bag"></i> Carrito de Compras</h2>
+  <p><%= link_to 'X', root_path %></p>
+</div>
+<div class="cart-container d-lg-flex justify-content-between">
+  <div class="cart-list-item">
+    <div class="cart-items">
+      <%= render(@cart.line_items) %>
+    </div>
+    <div class="delete-cart">
+      <p><%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "btn btn-danger" %></p>
+    </div>
   </div>
   <div class="check-out-wrapper">
     <h2>Resumen de compra</h2>
@@ -28,6 +30,4 @@
       <button type="button" class="btn btn-secondary btn-lg btn-block">COMPRAR</button>
     </div>
   </div>
-
-
 </div>
