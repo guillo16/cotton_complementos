@@ -21,12 +21,13 @@
     padding: 5px 0px;
   }
   h2 {
+    margin-top: 20px;
     font-size: 15px;
     font-weight: bold;
     text-align: center;
   }
 
-   h3 {
+  h3 {
     font-size: 15px;
     text-align: center;
   }
@@ -38,3 +39,33 @@
   text-align: center;
   margin: 30px 0px;
 }
+
+
+.product-show-details {
+  padding: 16px 0px;
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  h4 {
+    font-size: 16px;
+    margin-bottom: 0px;
+  }
+}
+
+
+.product-display {
+  padding: 16px 0px;
+  border-bottom: 1px solid lightgrey;
+  h4 {
+   font-size: 16px;
+   margin-bottom: 0px;
+ }
+}
+
+
+
+
+
+
+
+
+
