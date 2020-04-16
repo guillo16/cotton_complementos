@@ -1,0 +1,8 @@
+<div class="variant-form">
+  <%= simple_form_for([@product, @variant ]) do |f| %>
+  <%= f.input :title, collection: ["XS", "S", "L", "XL", "38", "39", "40", "unico"], :selected => "XS" %>
+  <%= f.input :stock, collection: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], :selected => 1 %>
+
+  <%= f.submit 'Crear Talle', class: 'btn btn-primary btn-lg btn-block' %>
+  <% end %>
+</div>

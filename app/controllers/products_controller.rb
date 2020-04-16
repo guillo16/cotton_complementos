@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
 
   def show
     @products = Product.all
+    @variant = Variant.new
   end
 
   def new
