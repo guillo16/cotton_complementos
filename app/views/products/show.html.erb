@@ -38,10 +38,8 @@
         <%= hidden_field_tag 'variant_id', variant.id %>
 
         <% else %>
-        <div class="label-guillo">
-          <% if variant.stock == 0 %>
-
-          <% else %>
+        <div class="label-size">
+          <% unless variant.stock == 0 %>
           <label>
             <input type="radio" name="variant_id" value="<%= variant.id %>" checked /><%= variant.title %>
           </label>
@@ -49,23 +47,20 @@
           <% end %>
         </div>
         <% end %>
-        <%= juan = @product.variants.sum(:stock) %>
-
-
-        <% if juan >= 1 %>
-        <%= submit_tag 'add to cart', class: 'btn btn-primary' %>
+         <!-- cantidad the stock que hay -->
+        <% stock = @product.variants.sum(:stock) %>
+        <% if stock >= 1 %>
+        <%= submit_tag 'COMPRAR', class: 'btn btn-dark btn-lg btn-block' %>
         <% else %>
-        no podes comprar
+        <button class= 'btn btn-secondary btn-lg btn-block 'disabled>AGOTADO</button>
         <% end %>
-
-
         <% end %>
       </div>
     </div>
     <div class="product-show-details d-flex justify-content-between align-items-center">
       <h4>Detalles del producto</h4> +
     </div>
-    <div class="product-show-details-2 d-flex justify-content-between align-items-center">
+    <div class="product-show-details-2 d-flex justify-content-between align-items-center ">
       <h4>Como comprar</h4> +
     </div>
   </div>
