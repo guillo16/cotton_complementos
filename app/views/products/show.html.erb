@@ -22,13 +22,22 @@
       <button type="button" class="btn btn-dark btn-lg btn-block">Agregar al Carrito</button>
     </div>
     <div class="product-show-details d-flex justify-content-between align-items-center">
-     <h4>Detalles del producto</h4> +
+      <h4>Detalles del producto</h4> +
     </div>
     <div class="product-display">
       <h4>Tambien te puede interesar</h4>
     </div>
   </div>
 </div>
+<div class="show-product-footer">
+  <div class="division-cards-wrapper">
+    <% @products.last(8).each do |product| %>
+    <%= render 'shared/product_home_card', product: product %>
+    <% end %>
+  </div>
+</div>
+
+
 
 
 
