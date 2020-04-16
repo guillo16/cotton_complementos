@@ -88,6 +88,10 @@
 }
 //where the size are display
 .label-size {
+  margin-bottom: 10px;
+  label {
+    margin-right: 16px;
+  }
 }
 
 @media(max-width: 1025px) {
@@ -132,6 +136,14 @@
       margin-bottom: 0px;
       text-align: left;
       font-weight: lighter;
+    }
+  }
+  //where the size are display
+  .label-size {
+    justify-content: center;
+    margin-bottom: 10px;
+    label {
+      margin-right: 16px;
     }
   }
 }

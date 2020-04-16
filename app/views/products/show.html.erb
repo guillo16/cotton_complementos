@@ -12,10 +12,12 @@
     </thead>
     <tbody>
       <% @product.variants.each do |variant| %>
+      <% unless variant.stock == 0 %>
       <tr>
         <td><%= variant.title %></td>
         <td><%= variant.stock %></td>
       </tr>
+      <% end %>
       <% end %>
     </tbody>
   </table>
@@ -33,21 +35,20 @@
       <div>
         <%= form_tag line_items_path do %>
         <%= hidden_field_tag 'product_id', @product.id %>
-        <% @product.variants.each do |variant| %>
-        <% if variant.title == 'unico' %>
-        <%= hidden_field_tag 'variant_id', variant.id %>
-
-        <% else %>
-        <div class="label-size">
+        <div class="label-size d-flex">
+          <% @product.variants.each do |variant| %>
+          <% if variant.title == 'unico' %>
+          <%= hidden_field_tag 'variant_id', variant.id %>
+          <% else %>
           <% unless variant.stock == 0 %>
           <label>
             <input type="radio" name="variant_id" value="<%= variant.id %>" checked /><%= variant.title %>
           </label>
           <% end %>
           <% end %>
+          <% end %>
         </div>
-        <% end %>
-         <!-- cantidad the stock que hay -->
+        <!-- cantidad the stock que hay -->
         <% stock = @product.variants.sum(:stock) %>
         <% if stock >= 1 %>
         <%= submit_tag 'COMPRAR', class: 'btn btn-dark btn-lg btn-block' %>
