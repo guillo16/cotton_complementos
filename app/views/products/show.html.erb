@@ -1,11 +1,9 @@
 <%= render 'shared/main_navbar' %>
-<br><br><br>
-
-<div class="product-show-container">
+<div class="product-show-container d-lg-flex">
   <div class="product-image">
     <img src="<%= @product.photo %>" alt="">
   </div>
-  <div class="product-show-content">
+  <div class="product-show-content p-lg-3 ">
     <p><%= @product.category.division.title %> / <%= @product.category.title %></p>
     <h2><%= @product.title.upcase %></h2>
     <h3>$98.00</h3>
@@ -24,12 +22,15 @@
     <div class="product-show-details d-flex justify-content-between align-items-center">
       <h4>Detalles del producto</h4> +
     </div>
-    <div class="product-display">
-      <h4>Tambien te puede interesar</h4>
+    <div class="product-show-details-2 d-flex justify-content-between align-items-center">
+      <h4>Como comprar</h4> +
     </div>
   </div>
 </div>
 <div class="show-product-footer">
+  <div class="product-display">
+    <h4>Tambien te puede interesar</h4>
+  </div>
   <div class="division-cards-wrapper">
     <% @products.last(8).each do |product| %>
     <%= render 'shared/product_home_card', product: product %>
