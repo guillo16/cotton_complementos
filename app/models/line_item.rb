@@ -4,6 +4,6 @@ class LineItem < ApplicationRecord
   belongs_to :variant
 
   def total_price
-    instrument.price.to_i * quantity.to_i
+    product.price.to_i * quantity.to_i
   end
 end

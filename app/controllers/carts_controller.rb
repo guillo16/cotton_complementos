@@ -57,7 +57,7 @@ class CartsController < ApplicationController
   def destroy
     session[:cart_id] = nil if @cart.id == session[:cart_id]
     respond_to do |format|
-      format.html { redirect_to cars_path, notice: 'Cart was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Cart was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
