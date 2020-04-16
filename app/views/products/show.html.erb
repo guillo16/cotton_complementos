@@ -1,4 +1,25 @@
 <%= render 'shared/main_navbar' %>
+<div class="variant-container">
+  <h2>Crear Talle para <%= @product.title %></h2>
+  <%= render 'variants/new' %>
+  <h2>Inventario de <%= @product.title %></h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Talle</th>
+        <th scope="col">Stock</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @product.variants.each do |variant| %>
+      <tr>
+        <td><%= variant.title %></td>
+        <td><%= variant.stock %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <div class="product-show-container d-lg-flex">
   <div class="product-image">
     <img src="<%= @product.photo %>" alt="">
@@ -42,23 +63,4 @@
 
 
 
-<div class="variant-container">
-  <h2>Inventario de <%= @product.title %></h2>
-  <%= render 'variants/new' %>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">Talle</th>
-        <th scope="col">Stock</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @product.variants.each do |variant| %>
-      <tr>
-        <td><%= variant.title %></td>
-        <td><%= variant.stock %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+
