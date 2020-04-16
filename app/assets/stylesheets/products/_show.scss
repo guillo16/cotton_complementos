@@ -71,7 +71,20 @@
 
 .show-product-footer {
   width: 90%;
+  margin: 50px auto;
+}
+
+.variant-container {
+  width: 80%;
   margin: 0 auto;
+  padding: 10px;
+  border: 1px solid grey;
+  h2 {
+    color: grey;
+    font-size: 20px;
+    text-align: center;
+
+  }
 }
 
 @media(max-width: 1025px) {
