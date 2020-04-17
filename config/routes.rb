@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'orders/show'
-  get 'orders/create'
-  get 'divisions/show'
+  get 'payments/new'
   devise_for :users
   root to: 'pages#home'
   resources :divisions, only: :show
