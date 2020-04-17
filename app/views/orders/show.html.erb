@@ -19,13 +19,13 @@
     <div class="order-show-footer">
       <p>Estado:<strong> <%= @order.state %> <i class="far fa-check-circle"></i></p></strong>
       <p>Total: <strong> <%= humanized_money_with_symbol(@order.amount) %> <i class="far fa-check-circle"></i></p></strong>
-      <button>
-        Completa los datos de envio
-      </button>
+
     </div>
+    <button class="btn btn-primary btn-lg btn-block">
+      Datos de envio
+    </button>
   </div>
 </div>
-<%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
 
 
 
