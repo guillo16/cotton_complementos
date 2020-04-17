@@ -1,2 +1,10 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
+<div class="purschase-wrapper">
+  <div class="purschase-container">
+    <h1>Gracias por comprar en cotton</h1>
+    <p>Status: <%= @order.state %> <i class="far fa-check-circle"></i></p>
+    <p>Amount: <%= humanized_money_with_symbol(@order.amount) %> <i class="far fa-check-circle"></i></p>
+
+    <p><%= link_to 'X', root_path %></p>
+    <%= link_to 'Continue Shopping', root_path, class: "btn btn-primary" %>
+  </div>
+</div>

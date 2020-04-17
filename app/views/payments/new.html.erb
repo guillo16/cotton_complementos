@@ -1,2 +1,10 @@
-<h1>Payments#new</h1>
-<p>Find me in app/views/payments/new.html.erb</p>
+<div class="container">
+  <div class="payment-order">
+    <p>Precio: <%= humanized_money_with_symbol(@order.amount) %></p>
+    <form action="/procesar-pago" method="POST">
+      <%= hidden_field_tag :authenticity_token %>
+      <input type="hidden" name='order_id' value=<%= @order.id %>>
+       <button type="submit" class="btn btn-primary" data-transaction-amount="<%= @order.amount %>">Comprar</button>
+    </form>
+  </div>
+</div>
