@@ -5,7 +5,12 @@ class CartsController < ApplicationController
   # GET /carts
   # GET /carts.json
   def index
-    @carts = Cart.all
+    if current_user.admin?
+      @carts = Cart.all
+    else
+      redirect_to root_path
+      flash[:notice] = "Accesso denegado!"
+    end
   end
 
   # GET /carts/1

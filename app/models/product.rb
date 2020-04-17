@@ -1,12 +1,12 @@
 class Product < ApplicationRecord
   belongs_to :category
   has_many :variants
-
   validates :title, presence: true
   validates :photo, presence: true
-
   has_many :line_items
-   monetize :price_cents
+  monetize :price_cents
+  validates :price, presence: true
+
 
   private
 

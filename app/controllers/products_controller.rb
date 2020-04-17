@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
       @product = Product.new
     else
       redirect_to root_path
-      notice
+      flash[:notice] = "Accesso denegado!"
     end
   end
 
@@ -43,6 +43,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:title, :photo, :category_id)
+    params.require(:product).permit(:title, :photo, :price, :category_id)
   end
 end
