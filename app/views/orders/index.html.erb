@@ -1,0 +1,14 @@
+<div class="container">
+  <% @orders.each do |order| %>
+  <h2><%= order.user.email %></h2>
+  <%= order.amount %>
+  <%= order.created_at.strftime('%D %M %Y') %>
+  <% order.cart.line_items.each do |line_item| %>
+  <h3><%= line_item.product.title %></h3>
+  <br><br><br>
+  <%= line_item.variant.title %>
+  <% end %>
+  <% end%>
+  <h1>total:</h1>
+  <%= @order %>
+</div>

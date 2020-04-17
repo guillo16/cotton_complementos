@@ -3,7 +3,7 @@
   <img src="<%= product.photo %>" alt="">
   <h2><%= product.title %></h2>
 
-  <p>100 pesos</p>
-  <h4><%= product.category.title %></h4>
-  <% end %>
+  <p><%= humanized_money_with_symbol(product.price) %></p>
+<h4 style="font-size: 12px;"><%= product.category.title %></h4>
+<% end %>
 </div>

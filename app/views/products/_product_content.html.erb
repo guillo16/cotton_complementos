@@ -5,7 +5,8 @@
   <div class="product-show-content p-lg-3 ">
     <p><%= @product.category.division.title %> / <%= @product.category.title %></p>
     <h2><%= @product.title.upcase %></h2>
-    <h3>$98.00</h3>
+    <h3><%= humanized_money_with_symbol(@product.price) %>
+</h3>
     <div class="product-show-variants">
       <!-- form para comprar muy complejo   -->
       <div>

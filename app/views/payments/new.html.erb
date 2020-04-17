@@ -1,0 +1,16 @@
+<div class="payment-wrapper" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1499916078039-922301b0eb9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80);">
+  <div class="payment-container">
+    <div class="text-center mb-5">
+      <h2>COTTON</h2>
+      <h2>COMPLEMENTOS</h2>
+    </div>
+    <div class="payment-order">
+      <p><strong>TOTAL:</strong><%= humanized_money_with_symbol(@order.amount) %></p>
+      <form action="/procesar-pago" method="POST">
+        <%= hidden_field_tag :authenticity_token %>
+        <input type="hidden" name='order_id' value=<%= @order.id %>>
+        <button type="submit" class="btn btn-dark btn-lg btn-block" data-transaction-amount="<%= @order.amount %>">Comprar</button>
+      </form>
+    </div>
+  </div>
+</div>

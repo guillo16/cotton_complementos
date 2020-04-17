@@ -1,0 +1,38 @@
+.payment-wrapper {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.payment-container {
+  padding: 10px 50px;
+  background-color: rgba(250, 250, 250, 0.8);
+  border-radius: 6px;
+  position: fixed;
+  top: 250px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 600px;
+  h2 {
+    font-weight: bold;
+    margin-bottom: 0px;
+    font-size: 18px;
+  }
+}
+
+.payment-order {
+  padding-bottom: 30px;
+  p {
+    font-size: 16px;
+  }
+}
+
+
+@media(max-width: 700px) {
+  .payment-container {
+    top: 150px;
+    padding: 10px 20px;
+    width: 90%;
+  }
+}
+
