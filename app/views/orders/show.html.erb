@@ -1,7 +1,41 @@
 <%= render 'shared/main_navbar' %>
-<div class="order-show-wrapper">
-  <h1>Gracias por tu compra</h1>
-  <table class="table table-striped">
+<div class="payment-wrapper" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1526827826797-7b05204a22ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80');">
+  <div class="order-show-wrapper">
+    <div class="d-flex align-items-center  justify-content-center">
+      <h1>Gracias por tu compra</h1><img src="https://cdn1.iconfinder.com/data/icons/color-bold-style/21/34-512.png" alt="" style="width: 40px;">
+    </div>
+
+    <% @order.cart.line_items.each do |line| %>
+    <div class="order-show-container d-flex">
+      <div class="product-order-show">
+        <img src="<%= line.product.photo %>" alt="">
+      </div>
+      <div class="pl-3">
+        <p><strong>Producto:</strong> <%= line.product.title %></p>
+        <p><strong>Talle:</strong> <%= line.variant.title %></p>
+      </div>
+    </div>
+    <% end %>
+    <div class="order-show-footer">
+      <p>Estado:<strong> <%= @order.state %> <i class="far fa-check-circle"></i></p></strong>
+      <p>Total: <strong> <%= humanized_money_with_symbol(@order.amount) %> <i class="far fa-check-circle"></i></p></strong>
+      <button>
+        Completa los datos de envio
+      </button>
+    </div>
+  </div>
+</div>
+<%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+
+
+
+
+
+
+
+
+
+<!--  <table class="table table-striped">
     <thead>
       <tr>
         <th scope="col">Producto</th>
@@ -25,32 +59,4 @@
       <% end %>
     </tbody>
 
-  </table>
-
-  <p>Status: <%= @order.state %> <i class="far fa-check-circle"></i></p>
-  <p>Amount: <%= humanized_money_with_symbol(@order.amount) %> <i class="far fa-check-circle"></i></p>
-
-
-  <p><%= link_to 'X', root_path %></p>
-  <%= link_to 'Continue Shopping', root_path, class: "btn btn-primary" %>
-</div>
-
-
-
-
-<% @order.cart.line_items.each do |line| %>
-<div class="guillo d-flex p-3">
-  <div class="product-order-show">
-    <img src="<%= line.product.photo %>" alt="">
-  </div>
-  <div class="p-3">
-
-    <p><strong>Producto:</strong> <%= line.product.title %></p>
-    <p><strong>Talle:</strong><%= line.variant.title %></p>
-  </div>
-</div>
-<% end %>
-
-
-
-
+  </table> -->

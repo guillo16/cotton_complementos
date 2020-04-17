@@ -1,6 +1,13 @@
 .order-show-wrapper {
-  width: 70%;
-  margin: 90px auto;
+  width: 90%;
+  margin: 75px auto;
+  background-color: rgba(250, 250, 250, 0.8);
+  padding: 50px 100px;
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 600px;
   h1 {
     font-size: 26px;
     font-weight: bold;
@@ -8,17 +15,27 @@
   }
 }
 
+.order-show-container {
+  padding: 10px 0px;
+  border-top: 1px solid lightgrey;
+  p {
+    font-size: 12px;
+    margin-bottom: 0px;
+  }
+}
 
 .product-order-show {
   img {
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 80px;
     object-fit: cover;
   }
 }
 
 
-.guillo {
-padding: 10px;
-border-top: 1px solid lightgrey;
+.order-show-footer {
+  border-top: 1px solid lightgrey;
+  p {
+    margin-bottom: 0px;
+  }
 }
