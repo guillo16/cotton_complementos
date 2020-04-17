@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/show'
+  get 'users/index'
   get 'payments/new'
   devise_for :users
   root to: 'pages#home'
