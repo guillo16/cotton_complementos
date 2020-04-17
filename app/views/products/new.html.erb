@@ -1,2 +1,15 @@
-<h1>Products#new</h1>
-<p>Find me in app/views/products/new.html.erb</p>
+<div class="product-form">
+  <h3><%= link_to 'Volver a la pagina principal', root_path  %></h3>
+  <h2>Crear Producto</h2>
+  <%= simple_form_for @product do |f| %>
+  <p>Nombre</p>
+  <%= f.input :title, placeholder: 'Nombre', label: false, input_html: { class: 'form-control form-control-lg'} %>
+  <p>Foto</p>
+  <%= f.input :photo,placeholder: 'Foto', label: false, input_html: { class: 'form-control form-control-lg'} %>
+  <p>Precio</p>
+  <%= f.input :price, label: false, input_html: { class: 'form-control form-control-lg'} %>
+  <p>Categoria</p>
+  <%= f.association :category, label: false, input_html: { class: 'form-control form-control-lg'} %>
+  <%= f.submit 'Crear Producto', class: 'btn btn-primary btn-lg btn-block' %>
+  <% end %>
+</div>

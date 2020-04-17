@@ -1,2 +1,23 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+<%= render 'shared/main_navbar' %>
+<div class="product-stock-wrapper">
+  <table class="table table-striped ">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Stock</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+      <tr>
+        <td><%= product.title %></td>
+        <td><%= product.price %></td>
+        <td><%= product.variants.sum(:stock) %></td>
+        <td><%= link_to 'Ver Producto', product_path(product) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,29 @@
+<%= render 'shared/main_navbar' %>
+<div class="users-container">
+  <table class="table table-striped ">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Usuarios</th>
+        <th scope="col">Ordenes</th>
+
+        <th scope="col">Fecha de inicio</th>
+        <th scope="col">Administrador</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to user.email, user_path(user) %></td>
+        <td><%= user.orders.count %></td>
+        <td><%= user.created_at.strftime('%d/%m/%Y') %></td>
+        <% if user.admin? %>
+        <td>SI</td>
+        <% else %>
+        <td>NO</td>
+        <% end %>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+

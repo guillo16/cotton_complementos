@@ -1,7 +1,14 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
   before_action :set_products, only: %i[show destroy]
+
   def index
+    if current_user.admin?
+      @products = Product.all
+    else
+      redirect_to root_path
+      flash[:notice] = "Accesso denegado!"
+    end
   end
 
   def show
@@ -10,7 +17,12 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
+    if current_user.admin?
+      @product = Product.new
+    else
+      redirect_to root_path
+      flash[:notice] = "Accesso denegado!"
+    end
   end
 
   def create
@@ -38,6 +50,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:title, :photo, :category_id)
+    params.require(:product).permit(:title, :photo, :price, :category_id)
   end
 end

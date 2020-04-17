@@ -2,8 +2,13 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @order = Order.sum('amount_cents') * 0.01
-    @orders = Order.all
+    if current_user.admin?
+      @order = Order.sum('amount_cents') * 0.01
+      @orders = Order.all
+    else
+      redirect_to root_path
+      flash[:notice] = "Accesso denegado!"
+    end
   end
 
   def show
