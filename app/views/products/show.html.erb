@@ -1,4 +1,5 @@
 <%= render 'shared/main_navbar' %>
+<% if current_user.admin? %>
 <section id="variants_container">
   <div class="variant-container">
     <h2>Crear Talle para <%= @product.title %></h2>
@@ -24,6 +25,7 @@
     </table>
   </div>
 </section>
+<% else %>
 <section id="product-content">
   <%= render 'product_content' %>
 </section>
@@ -39,3 +41,4 @@
     </div>
   </div>
 </section>
+<% end %>

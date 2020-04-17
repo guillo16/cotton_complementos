@@ -10,7 +10,12 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
+    if current_user.admin?
+      @product = Product.new
+    else
+      redirect_to root_path
+      notice
+    end
   end
 
   def create
