@@ -1,2 +1,34 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<%= render 'shared/main_navbar' %>
+<% if current_user.admin? %>
+<div class="user-show-wrapper">
+  <h2>Bienvenido <%= current_user.email %></h2>
+  <%= link_to 'Crear Producto', new_product_path, class: 'btn btn-dark btn-lg btn-block'  %>
+  <%= link_to 'Inventario de Productos', products_path, class: 'btn btn-primary btn-lg btn-block'  %>
+  <%= link_to 'Ver Ordenes', orders_path, class: 'btn btn-danger btn-lg btn-block'  %>
+  <%= link_to 'Ver Carritos', carts_path, class: 'btn btn-secondary btn-lg btn-block'  %>
+</div>
+<% else %>
+<% end %>
+<div class="user-show-container">
+  <h2>Bienvenido <%= current_user.email %></h2>
+  <h3>Mis ordenes </h3>
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Fecha</th>
+        <th scope="col">Precio</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user.orders.each do |order| %>
+      <tr>
+        <th><%= order.created_at.strftime('%d/%m/%Y') %></th>
+        <td><%= order.amount %></td>
+        <td><%= link_to 'Ver orden', order_path(order) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+

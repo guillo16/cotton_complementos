@@ -1,7 +1,14 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
   before_action :set_products, only: %i[show destroy]
+
   def index
+    if current_user.admin?
+      @products = Product.all
+    else
+      redirect_to root_path
+      flash[:notice] = "Accesso denegado!"
+    end
   end
 
   def show
