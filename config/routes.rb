@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'users/show'
-  get 'users/index'
+
   get 'payments/new'
   devise_for :users
   root to: 'pages#home'
@@ -17,6 +16,6 @@ Rails.application.routes.draw do
     resources :payments, only: :new
   end
 
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :users, only: [:index, :show]
+# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
