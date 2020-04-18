@@ -42,13 +42,16 @@
         <p><%= @product.description %></p>
       </div>
     </div>
-
-    <div class="product-show-details-2 d-flex justify-content-between align-items-center ">
-      <h4>Como comprar</h4> +
-    </div>
-  </div>
+    <div class="product-show-details-2">
+      <button id="myComprarButton" onClick="myComprarFunction(); toggleComprarText(this.id);"><p>Como comprar</p>  +</button>
+      <div style="display:none;" id="myComprarDiv">
+       <p>Una vez que compres el producto , nos comunicaremos con vos para pactar la entrega</p>
+       <p>El pago se puede hacer mediante <strong>transferencia bancaria</strong>  o en <strong>efectivo</strong>  durante la entrega del producto</p>
+       <p><strong>Por el momento el pago con tarjetas no esta disponble</strong></p>
+     </div>
+   </div>
+ </div>
 </div>
-
 <script>
   function myCatFunction() {
     var x = document.getElementById("myCatDiv");
@@ -69,4 +72,64 @@
      document.getElementById(button_id).innerText = "Detalles del producto +";
    }
  }
+
+ function myComprarFunction() {
+  var x = document.getElementById("myComprarDiv");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+
+}
+function toggleComprarText(button_id)  {
+ if (document.getElementById(button_id).innerText == "Como comprar +")
+ {
+   document.getElementById(button_id).innerText = "Como comprar -";
+ }
+ else
+ {
+   document.getElementById(button_id).innerText = "Como comprar +";
+ }
+}
 </script>
+
+<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+ Show
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+
+
+$('[data-toggle="collapse"]').click(function() {
+  $(this).toggleClass( "active" );
+  if ($(this).hasClass("active")) {
+    $(this).text("Hide");
+  } else {
+    $(this).text("Show");
+  }
+});
+</script>
+
+
+<p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Link with href
+  </a>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Button with data-target
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+  </div>
+</div>
