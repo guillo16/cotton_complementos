@@ -43,7 +43,7 @@
       </div>
     </div>
     <div class="product-show-details-2">
-      <button id="myComprarButton" onClick="myComprarFunction(); toggleComprarText(this.id);"><p>Como comprar</p>  +</button>
+      <button id="myComprarButton" onClick="myComprarFunction(); toggleComprarText(this.id);"><p></p> Como comprar +</button>
       <div style="display:none;" id="myComprarDiv">
        <p>Una vez que compres el producto , nos comunicaremos con vos para pactar la entrega</p>
        <p>El pago se puede hacer mediante <strong>transferencia bancaria</strong>  o en <strong>efectivo</strong>  durante la entrega del producto</p>
@@ -93,43 +93,3 @@ function toggleComprarText(button_id)  {
  }
 }
 </script>
-
-<p>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
- Show
-  </button>
-</p>
-<div class="collapse" id="collapseExample">
-  <div class="card card-body">
-    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-  </div>
-</div>
-
-<script>
-  $(document).ready(function() {
-
-
-$('[data-toggle="collapse"]').click(function() {
-  $(this).toggleClass( "active" );
-  if ($(this).hasClass("active")) {
-    $(this).text("Hide");
-  } else {
-    $(this).text("Show");
-  }
-});
-</script>
-
-
-<p>
-  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Link with href
-  </a>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Button with data-target
-  </button>
-</p>
-<div class="collapse" id="collapseExample">
-  <div class="card card-body">
-    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-  </div>
-</div>
