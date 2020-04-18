@@ -1,4 +1,5 @@
 <%= render 'shared/main_navbar' %>
+<% if user_signed_in? %>
 <% if current_user.admin? %>
 <section id="variants_container">
   <div class="variant-container">
@@ -27,6 +28,8 @@
 </section>
 <% else %>
 <% end %>
+<% else %>
+<% end %>
 <section id="product-content">
   <%= render 'product_content' %>
 </section>
@@ -42,4 +45,5 @@
     </div>
   </div>
 </section>
+
 

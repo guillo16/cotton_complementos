@@ -1,12 +1,13 @@
 class Product < ApplicationRecord
   belongs_to :category
-  has_many :variants
+  has_many :variants, dependent: :destroy
   validates :title, presence: true
-  validates :photo, presence: true
   has_many :line_items
   monetize :price_cents
   validates :price, presence: true
-
+  has_many_attached :photos
+  validates :photos, presence: true
+  validates :description, presence: true
 
   private
 

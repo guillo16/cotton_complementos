@@ -1,6 +1,8 @@
 <div class="product-show-container d-lg-flex">
   <div class="product-image">
-    <img src="<%= @product.photo %>" alt="">
+    <% @product.photos.each do |photo| %>
+    <%= cl_image_tag photo.key %>
+    <% end %>
   </div>
   <div class="product-show-content p-lg-3 ">
     <p><%= @product.category.division.title %> / <%= @product.category.title %></p>
@@ -34,11 +36,60 @@
         <% end %>
       </div>
     </div>
-    <div class="product-show-details d-flex justify-content-between align-items-center">
-      <h4>Detalles del producto</h4> +
+    <div class="product-show-details">
+      <button id="myCatButton" onClick="myCatFunction(); toggleCatText(this.id);">Detalles del producto +</button>
+      <div style="display:none;" id="myCatDiv">
+        <p><%= @product.description %></p>
+      </div>
     </div>
-    <div class="product-show-details-2 d-flex justify-content-between align-items-center ">
-      <h4>Como comprar</h4> +
-    </div>
-  </div>
+    <div class="product-show-details-2">
+      <button id="myComprarButton" onClick="myComprarFunction(); toggleComprarText(this.id);"><p></p> Como comprar +</button>
+      <div style="display:none;" id="myComprarDiv">
+       <p>Una vez que compres el producto , nos comunicaremos con vos para pactar la entrega</p>
+       <p>El pago se puede hacer mediante <strong>transferencia bancaria</strong>  o en <strong>efectivo</strong>  durante la entrega del producto</p>
+       <p><strong>Por el momento el pago con tarjetas no esta disponble</strong></p>
+     </div>
+   </div>
+ </div>
 </div>
+<script>
+  function myCatFunction() {
+    var x = document.getElementById("myCatDiv");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+
+  }
+  function toggleCatText(button_id)  {
+   if (document.getElementById(button_id).innerText == "Detalles del producto +")
+   {
+     document.getElementById(button_id).innerText = "Detalles del producto -";
+   }
+   else
+   {
+     document.getElementById(button_id).innerText = "Detalles del producto +";
+   }
+ }
+
+ function myComprarFunction() {
+  var x = document.getElementById("myComprarDiv");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+
+}
+function toggleComprarText(button_id)  {
+ if (document.getElementById(button_id).innerText == "Como comprar +")
+ {
+   document.getElementById(button_id).innerText = "Como comprar -";
+ }
+ else
+ {
+   document.getElementById(button_id).innerText = "Como comprar +";
+ }
+}
+</script>
