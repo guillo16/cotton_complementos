@@ -8,7 +8,9 @@
     <% @order.cart.line_items.each do |line| %>
     <div class="order-show-container d-flex">
       <div class="product-order-show">
-        <img src="<%= line.product.photo %>" alt="">
+        <% line.product.photos.first(1).each do |photo| %>
+        <%= cl_image_tag photo.key%>
+        <% end %>
       </div>
       <div class="pl-3">
         <p><strong>Producto:</strong> <%= line.product.title %></p>
