@@ -1,0 +1,25 @@
+<div class="user-order-container">
+  <% if current_user.orders.present? %>
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Fecha</th>
+        <th scope="col">Precio</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user.orders.each do |order| %>
+      <tr>
+        <th><%= order.created_at.strftime('%d/%m/%Y') %></th>
+        <td><%= order.amount %></td>
+        <td><%= link_to 'Ver orden', order_path(order) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% else %>
+  <%= link_to 'Hace tu primera compra', root_path  %>
+  <% end %>
+</div>
+

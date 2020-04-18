@@ -2,3 +2,47 @@
   width: 90%;
   margin: 100px auto;
 }
+
+.user-show-container{
+  width: 90%;
+  margin: 10px auto;
+  margin-top: 90px;
+}
+
+.about-container {
+  width: 90%;
+  margin: 10px auto;
+  display: flex;
+}
+.nav-tab {
+ flex: 0 0 30%;
+ padding-right: 10px;
+}
+.nav {
+  position: sticky;
+  top: 90px;
+}
+
+
+.user-order-container {
+  width: 90%;
+  margin: 0 auto;
+
+}
+
+.nav-tab-content {
+  width: 100%;
+}
+
+.user-show-title {
+  padding-bottom: 5px;
+  border-bottom: 1px solid lightgrey;
+  h2 {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  h3 {
+    font-size: 14px;
+    color: lightblue;
+  }
+}
