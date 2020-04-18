@@ -37,34 +37,36 @@
       </div>
     </div>
     <div class="product-show-details">
-      <button id="myCatButton" onClick="myCatFunction(); toggleCatText(this.id);">+ Mas</button>
+      <button id="myCatButton" onClick="myCatFunction(); toggleCatText(this.id);">Detalles del producto +</button>
       <div style="display:none;" id="myCatDiv">
         <p><%= @product.description %></p>
       </div>
     </div>
-    <script>
-      function myCatFunction() {
-        var x = document.getElementById("myCatDiv");
-        if (x.style.display === "none") {
-          x.style.display = "block";
-        } else {
-          x.style.display = "none";
-        }
 
-      }
-      function toggleCatText(button_id)  {
-       if (document.getElementById(button_id).innerText == "+ Mas")
-       {
-         document.getElementById(button_id).innerText = "- Menos";
-       }
-       else
-       {
-         document.getElementById(button_id).innerText = "+ Mas";
-       }
-     }
-   </script>
-   <div class="product-show-details-2 d-flex justify-content-between align-items-center ">
-    <h4>Como comprar</h4> +
+    <div class="product-show-details-2 d-flex justify-content-between align-items-center ">
+      <h4>Como comprar</h4> +
+    </div>
   </div>
 </div>
-</div>
+
+<script>
+  function myCatFunction() {
+    var x = document.getElementById("myCatDiv");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+
+  }
+  function toggleCatText(button_id)  {
+   if (document.getElementById(button_id).innerText == "Detalles del producto +")
+   {
+     document.getElementById(button_id).innerText = "Detalles del producto -";
+   }
+   else
+   {
+     document.getElementById(button_id).innerText = "Detalles del producto +";
+   }
+ }
+</script>
