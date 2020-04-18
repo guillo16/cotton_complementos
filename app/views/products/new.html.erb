@@ -4,6 +4,8 @@
   <%= simple_form_for @product do |f| %>
   <p>Nombre</p>
   <%= f.input :title, placeholder: 'Nombre', label: false, input_html: { class: 'form-control form-control-lg'} %>
+  <p>Descripcion</p>
+  <%= f.input :description, placeholder: 'Descripcion', label: false, input_html: { class: 'form-control form-control-lg' , id:"exampleFormControlTextarea1", rows:"5" } %>
   <p>Foto</p>
   <%= f.input :photos, as: :file, label: false, input_html: { multiple: true } %>
   <p>Precio</p>

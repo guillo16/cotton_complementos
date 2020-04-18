@@ -6,6 +6,8 @@ class Product < ApplicationRecord
   monetize :price_cents
   validates :price, presence: true
   has_many_attached :photos
+  validates :photos, presence: true
+  validates :description, presence: true
 
   private
 
