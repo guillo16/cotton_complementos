@@ -1,1 +1,6 @@
-guillllo
+<h2 class= "product-user-title">PRODUCTOS RECOMENDADOS</h2>
+<div class= "product-container">
+  <% @products.first(8).each do |product| %>
+  <%= render 'shared/product_card', product: product %>
+  <% end %>
+</div>
