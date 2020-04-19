@@ -21,7 +21,7 @@
   <% if user_signed_in? %>
   <%= link_to "Perfil", user_path(current_user), class: "nav-link" %>
   <% else %>
-  <%= link_to "Log in", destroy_user_session_path, method: :delete, class: "nav-link" %>
+  <%= link_to "Iniciar sesión", new_user_session_path, class: "nav-link" %>
   <% end %>
 </ul>
 </div>
