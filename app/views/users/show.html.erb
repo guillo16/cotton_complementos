@@ -12,7 +12,7 @@
 <div class="user-show-container">
   <div class="user-show-title d-flex justify-content-between align-items-center">
     <h2>Bienvenido Guillermo Jose</h2>
-    <h3>Cerrar sesion</h3>
+    <h3><%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %></h3>
   </div>
 </div>
 <div class="about-container">
