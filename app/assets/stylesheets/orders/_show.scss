@@ -1,3 +1,19 @@
+.order-navbar {
+  text-align: center;
+  padding: 10px;
+  background-color: transparent;
+  h2 {
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 0px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+
+  }
+  a {
+    text-decoration: none;
+  }
+}
 .order-show-wrapper {
   width: 80%;
   margin: 75px auto;
@@ -43,6 +59,11 @@
   }
 }
 
+.order-show-button{
+  width: 70%;
+  margin: 0 auto;
+}
+
 @media(max-width: 600px) {
   .order-show-wrapper {
     padding: 20px;
@@ -54,5 +75,8 @@
       font-weight: bold;
       text-align: center;
     }
+  }
+  .order-show-button{
+    width: 100%;
   }
 }
