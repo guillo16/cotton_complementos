@@ -168,6 +168,13 @@
     }
   }
 }
+@media(max-width: 380.98px) {
+  .product-image {
+    img {
+      height: 50vh;
+    }
+  }
+}
 
 @media(max-width: 340.98px) {
   .product-image {
