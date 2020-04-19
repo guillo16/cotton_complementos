@@ -1,6 +1,8 @@
 <div class="line-wrapper">
   <div class="line-image">
-    <img src="<%= line_item.product.photo %>" alt="car photo">
+    <% line_item.product.photos.first(1).each do |photo| %>
+    <%= cl_image_tag photo.key%>
+    <% end %>
   </div>
   <div class="line-content">
     <h2><%= line_item.product.title %></h2>

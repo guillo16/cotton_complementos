@@ -5,14 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+require "open-uri"
 puts 'destroy database'
-
-
-Category.delete_all
-Division.delete_all
-Product.delete_all
+LineItem.delete_all
 Variant.delete_all
+Product.delete_all
+Category.delete_all
+
+
+Division.delete_all
+
 puts 'creating divisions'
 cocina = Division.create(title: 'Cocina', photo: 'https://images.unsplash.com/photo-1556912167-f556f1f39fdf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1960&q=80')
 fragancias = Division.create(title: 'Fragancias de hogar',photo: 'https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
@@ -57,19 +59,19 @@ photos = ['https://images.unsplash.com/photo-1566491888763-e71518bbe846?ixlib=rb
 
 category = Category.all
 title = ['Leona Placemat',
-'Leona Plato',
-'Pijama de ultima generacion',
-'Vestido elegante']
+  'Leona Plato',
+  'Pijama de ultima generacion',
+  'Vestido elegante']
+file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
 
-40.times do
-  Product.create(title: title.sample , photo: photos.sample, category: category.sample)
-end
+  2.times do
+   g = Product.new(title: title.sample ,description: 'HOla como andas todo bien y vos', category: category.sample, price: 30)
+   g.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+   g.save!
 
-puts 'finish database seed'
+ end
 
-
-
-
+ puts 'finish database seed'
 
 
 

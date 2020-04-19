@@ -19,11 +19,8 @@
   <%= link_to "Fragancias de hogar", "#", class: "nav-link" %>
   <%= link_to "Indumentaria", "#", class: "nav-link" %>
   <%= link_to "Manos & Cuerpo", "#", class: "nav-link" %>
-  <%= link_to "Decoracion", "#", class: "nav-link" %>
   <% if user_signed_in? %>
-  <li class="nav-item  d-sm-none">
-    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-  </li>
+  <%= link_to "Perfil", user_path(current_user), class: "nav-link" %>
   <% else %>
   <%= link_to "Log in", destroy_user_session_path, method: :delete, class: "nav-link" %>
   <% end %>

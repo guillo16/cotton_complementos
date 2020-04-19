@@ -2,3 +2,87 @@
   width: 90%;
   margin: 100px auto;
 }
+
+.user-show-container{
+  width: 90%;
+  margin: 10px auto;
+  margin-top: 90px;
+}
+
+.about-container {
+  width: 90%;
+  margin: 10px auto;
+  display: flex;
+}
+.nav-tab {
+ flex: 0 0 30%;
+ padding-right: 10px;
+}
+.nav {
+  position: sticky;
+  top: 90px;
+}
+
+
+.user-order-container {
+  width: 90%;
+  margin: 0 auto;
+
+}
+
+.nav-tab-content {
+  width: 100%;
+}
+
+.user-show-title {
+  padding-bottom: 5px;
+  border-bottom: 1px solid lightgrey;
+  h2 {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  h3 {
+    font-size: 14px;
+    color: lightblue;
+  }
+}
+
+.product-user-title {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 8px;
+  border-bottom: 1px solid lightgrey;
+  color: black;
+}
+
+.profile-user-container {
+  h2 {
+    font-size:16px;
+    font-weight: bold;
+    color: rgb(72, 72, 72);
+  }
+
+  p {
+    font-size: 16px;
+    color: rgb(72, 72, 72);
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgrey;
+  }
+}
+
+@media(max-width: 700px) {
+  .about-container {
+    display: block;
+  }
+
+  .nav-tab {
+   text-align: center;
+ }
+ .nav {
+  margin-bottom: 40px;
+}
+
+.product-user-title {
+  font-size: 17px;
+}
+}

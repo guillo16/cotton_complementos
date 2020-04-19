@@ -1,6 +1,8 @@
 <div class="product_home_card">
   <%= link_to product_path(product) do %>
-  <img src="<%= product.photo %>" alt="">
+  <% product.photos.first(1).each do |photo| %>
+  <%= cl_image_tag photo.key%>
+  <% end %>
   <h2><%= product.title %></h2>
   <% end %>
 </div>

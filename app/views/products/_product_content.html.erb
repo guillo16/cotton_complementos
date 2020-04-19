@@ -1,6 +1,6 @@
 <div class="product-show-container d-lg-flex">
   <div class="product-image">
-    <% @product.photos.each do |photo| %>
+    <% @product.photos.first(1).each do |photo| %>
     <%= cl_image_tag photo.key %>
     <% end %>
   </div>
