@@ -1,0 +1,31 @@
+.order-index-container {
+  width: 90%;
+  margin: 90px auto;
+  display: flex;
+}
+
+.order-index-total {
+  border-left: 1px solid lightgrey;
+  padding-left: 10px;
+  position: fixed;
+  top: 100px;
+  right: 10px;
+  height: 100vh;
+  h1 {
+    font-weight: bold;
+    font-size: 22px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid lightgrey;
+
+  }
+}
+
+.order-index-content {
+  flex: 0 0 70%;
+}
+
+
+.order-index-footer {
+  padding-bottom: 10px;
+  border-bottom: 1px solid lightgrey;
+}
