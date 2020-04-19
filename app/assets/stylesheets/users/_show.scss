@@ -41,9 +41,19 @@
     font-size: 22px;
     font-weight: bold;
   }
-  h3 {
+  a {
     font-size: 14px;
-    color: lightblue;
+    color: #167a92;
+  }
+}
+
+.nav-pills .nav-link.active {
+  background-color:#167a92;
+}
+
+.nav-tab {
+  a {
+    color: #167a92;
   }
 }
 
