@@ -59,12 +59,13 @@
  font-size: 16px;
  color: black;
  display: flex;
+ padding: 0px;
  &:focus {
   outline: none;
- }
- &:hover {
+}
+&:hover {
   color: #167a92;
- }
+}
 }
 #myComprarButton {
  background-color: transparent;
@@ -73,12 +74,13 @@
  font-size: 16px;
  color: black;
  display: flex;
+ padding: 0px;
  &:focus {
   outline: none;
- }
- &:hover {
+}
+&:hover {
   color: #167a92;
- }
+}
 }
 
 .btn-gradient {
@@ -90,9 +92,14 @@
   transition: background 0.3s ease;
   border: 1px solid #0F60C4;
   &:hover {
-  background: linear-gradient(#147EFF, #0F67DA);
-  color: white;
-}
+    background: linear-gradient(#147EFF, #0F67DA);
+    color: white;
+  }
 }
 
-
+@media(max-width: 688px) {
+  .mobile-button-container {
+    width: 96%;
+    margin: 0 auto;
+  }
+}

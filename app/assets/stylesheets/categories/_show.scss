@@ -1,3 +1,4 @@
+//this page also contains the properties of the division show page
 //top part of the page
 .division-list {
   text-align: center;
@@ -53,7 +54,7 @@
   a {
     color: #26262c;
     &:hover {
-    color: #26262c;
+      color: #26262c;
     }
   }
   h4 {
@@ -89,9 +90,10 @@
 
 .product-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   padding: 16px;
+  padding-right: 0px;
 }
 //mobile part of the page is hidden in full screen
 .mobile-button-container{
@@ -101,6 +103,10 @@
 @media(max-width: 1025px) {
   .product-container {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  .category-wrapper {
+    display: flex;
+    width: 96%;
   }
 }
 
@@ -123,7 +129,7 @@
   .category-path {
     font-size: 13px;
     color: black;
-    width: 90%;
+    width: 96%;
     text-align: left;
     margin-top: 30px;
   }
@@ -131,7 +137,7 @@
   .product-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 16px;
+    grid-gap: 10px;
     padding: 10px 0px;
   }
 }
