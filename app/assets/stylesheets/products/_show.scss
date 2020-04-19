@@ -3,9 +3,10 @@
 }
 
 .product-image {
+  flex: 0 0 60%;
   img {
     width: 100%;
-    height: 60vh;
+    height: 90vh;
     object-fit: cover;
   }
 }
@@ -115,7 +116,6 @@
   }
 }
 
-
 @media(max-width: 992px) {
   .product-show-content {
     h2 {
@@ -164,6 +164,13 @@
   .product-image {
     img {
       height: 60vh;
+    }
+  }
+}
+@media(max-width: 380.98px) {
+  .product-image {
+    img {
+      height: 50vh;
     }
   }
 }

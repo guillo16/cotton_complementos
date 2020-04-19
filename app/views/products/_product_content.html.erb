@@ -1,8 +1,6 @@
 <div class="product-show-container d-lg-flex">
   <div class="product-image">
-    <% @product.photos.first(1).each do |photo| %>
-    <%= cl_image_tag photo.key %>
-    <% end %>
+    <%= render 'carousel' %>
   </div>
   <div class="product-show-content p-lg-3 ">
     <p><%= @product.category.division.title %> / <%= @product.category.title %></p>
