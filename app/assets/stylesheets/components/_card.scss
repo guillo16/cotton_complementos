@@ -29,11 +29,30 @@
   p {
     font-size: 13px;
     color: black;
+    text-align: left;
   }
   img {
     width: 200px;
-    height: 300px;
+    height: 220px;
     object-fit: cover;
     margin-right: 36px;
+  }
+}
+
+@media(max-width: 600px) {
+  .product_card {
+    display: inline-block;
+    h2 {
+      margin-top: 6px;
+    }
+    p {
+      font-size: 13px;
+      color: black;
+    }
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
   }
 }
