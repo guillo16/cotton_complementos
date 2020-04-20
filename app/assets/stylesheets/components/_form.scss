@@ -30,6 +30,20 @@
   width: 100%;
   background-color: white;
 }
+
+.sing-up-container {
+  width: 400px;
+  margin: 0px auto;
+  padding: 0px  30px;
+  h2 {
+    font-size: 22px;
+  }
+  p {
+    margin-bottom: 2px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
 //log in forms
 .login-wrapper {
   width: 100%;
@@ -95,21 +109,38 @@
     }
   }
 }
+.sing-up-navbar {
+  padding: 10px 0px;
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0px 2px 10px lightgrey;
+  h2 {
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 2px;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
 .login-navbar {
   padding: 20px 0px;
   background-color: white;
   width: 100%;
   text-align: center;
   box-shadow: 0px 2px 10px lightgrey;
-    h2 {
-      color: black;
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 2px;
-    }
-    a {
-      text-decoration: none;
-    }
+  h2 {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 2px;
+  }
+  a {
+    text-decoration: none;
+  }
 }
 
 @media(max-width: 686px) {
@@ -125,6 +156,10 @@
     a {
       margin-left: 80px;
     }
+  }
+  .sing-up-container {
+    width: 100%;
+    margin: 0px auto;
   }
 }
 
