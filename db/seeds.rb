@@ -7,13 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
 puts 'destroy database'
-Cart.delete_all
 Order.delete_all
 LineItem.delete_all
+Cart.delete_all
 Variant.delete_all
 Product.delete_all
 Category.delete_all
 Division.delete_all
+User.delete_all
 
 puts 'creating divisions'
 cocina = Division.create(title: 'Cocina', photo: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2035&q=80')
@@ -50,26 +51,6 @@ perfume = Category.create(title: 'Perfume & Colonia', division: jabon )
 alfombras = Category.create(title: 'Alfombras', division: decoracion )
 canastos = Category.create(title: 'Canastos', division: decoracion )
 
-'creating products'
-
-photos = ['https://images.unsplash.com/photo-1566491888763-e71518bbe846?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80',
- 'https://images.unsplash.com/photo-1554141186-996eb6b1a09d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1578&q=80',
- 'https://images.unsplash.com/photo-1565183928294-7063f23ce0f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
-]
-
-category = Category.all
-title = ['Leona Placemat',
-  'Leona Plato',
-  'Pijama de ultima generacion',
-  'Vestido elegante']
-file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
-
-  2.times do
-   g = Product.new(title: title.sample ,description: 'HOla como andas todo bien y vos', category: category.sample, price: 30)
-   g.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-   g.save!
-
- end
 
  puts 'finish database seed'
 
