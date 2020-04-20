@@ -1,26 +1,29 @@
 <%= render 'shared/main_navbar' %>
-
 <div class="order-index-total">
- <h1>TOTAL</h1>
- <h3><strong>$<%= @order %></strong></h3>
+  <h1 class="title-orders">Ventas</h1>
+  <div class="text-center">
+   <h1>TOTAL</h1>
+   <h4><strong>$<%= @order %></strong></h4>
+ </div>
 </div>
-<h1 class="title-orders">Ventas</h1>
-<div class="order-index-container">
-  <div class="order-index-content">
-    <% @orders.reverse_each do |order| %>
-    <h2><strong>Precio: </strong>$<%= order.amount %></h2>
+<div class="order-index-content">
+  <% @orders.reverse_each do |order| %>
+  <div class="d-md-flex justify-content-between align-items-center">
     <h2><strong>Fecha: </strong><%= order.created_at.strftime('%d/%m/%Y %H:%M') %></h2>
-
-    <h2><strong>Nombre: </strong>Juan Gonzales </h2>
-    <h2><strong>Email: </strong><%= order.user.email %> </h2>
-
-    <% order.cart.line_items.each do |line_item| %>
-    <div class="order-index-footer">
-      <h2><strong>Producto: </strong><%= line_item.product.title %></h2>
-      <h2><strong>Talle: </strong><%= line_item.variant.title %></h2>
-    </div>
-    <% end %>
-    <% end%>
+    <h2><strong>Precio: </strong>$<%= order.amount %></h2>
   </div>
 
+  <div class="d-md-flex justify-content-between align-items-center">
+    <h2><strong>Nombre: </strong>Juan Gonzales </h2>
+    <h2><strong>Email: </strong><%= order.user.email %> </h2>
+  </div>
+
+  <% order.cart.line_items.each do |line_item| %>
+  <div class="order-index-footer">
+    <h2><strong>Producto: </strong><%= line_item.product.title %></h2>
+    <h2><strong>Talle: </strong><%= line_item.variant.title %></h2>
+  </div>
+  <% end %>
+  <% end%>
 </div>
+
