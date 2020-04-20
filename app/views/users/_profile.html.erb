@@ -1,20 +1,20 @@
 <div class="profile-user-container">
   <h3 class= "product-user-title">TUS DATOS</h3>
   <h2>Nombre legal</h2>
-  <p>Juana Manzo</p>
+  <p><%= @user.name.capitalize %> <%= @user.last_name.capitalize %></p>
   <h2>Fecha de nacimiento</h2>
   <p>16 de abril de 1989</p>
   <h2>Telefono</h2>
-  <p>+54 381584843</p>
+  <p><%= @user.phone %></p>
   <h2>Direción</h2>
-  <p>Ruben Dario y Algo</p>
+  <p><%= @user.address.capitalize %></p>
   <h2>Provincia</h2>
-  <p>Buenos Aires</p>
+  <p><%= @user.state.capitalize %></p>
   <h2>Localidad</h2>
-  <p>Recoleta</p>
+  <p><%= @user.city.capitalize %></p>
   <h2>Codigo postal</h2>
-  <p>40192</p>
+  <p><%= @user.postal %></p>
   <h2>Dirección de correo electrónico</h2>
   <p><%= @user.email %></p>
-  <button type="button" class="btn btn-gradient btn-lg btn-block">Editar Perfil</button>
+  <%= link_to 'Editar Perfil', edit_user_registration_path, class: "btn btn-gradient btn-lg btn-block" %>
 </div>

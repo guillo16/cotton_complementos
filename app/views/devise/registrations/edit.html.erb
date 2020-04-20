@@ -1,35 +1,91 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+<div class="sing-up-wrapper">
+  <div class="sing-up-navbar">
+    <%= link_to root_path do  %>
+    <h2>COTTON</h2>
+    <h2>COMPLEMENTOS</h2>
     <% end %>
-
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
   </div>
+  <div class="sing-up-container">
+    <div class="text-center">
+      <hr class="hr-text" data-content="Editar Usuario">
+    </div>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
+    <div class="form-inputs">
+      <div class="d-none">
+        <%= f.input :email, required: true, autofocus: true %>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+      </div>
+      <p>Email</p>
+      <%= current_user.email %>
+      <br><br>
+      <p>Nueva contraseña</p>
+      <%= f.input :password,
+      hint: "Dejar en blanco si no queres cambiar la contraseña",
+      required: false,
+      label: false,
+      input_html: { autocomplete: "new-password" } %>
+      <p>Confirmar contraseña</p>
+      <%= f.input :password_confirmation,
+      required: false,
+      label: false,
+      input_html: { autocomplete: "new-password" } %>
+      <p>Contraseña actual</p>
+      <%= f.input :current_password,
+      hint: "necesitamos tu contraseña actual para realizar los cambios",
+      required: true,
+      label: false,
+      input_html: { autocomplete: "current-password" } %>
+      <p>Nombre</p>
+      <%= f.input :name,
+      required: true,
+      autofocus: true,
+      input_html: { autocomplete: "nombre", class: "form-control form-control" }, label: false, placeholder: "Cotton" %>
+
+      <p>Apellido</p>
+      <%= f.input :last_name,
+      required: true,
+      autofocus: true,
+      input_html: { autocomplete: "apellido", class: "form-control form-control" }, label: false, placeholder: "Complementos" %>
+      <p>Telefono</p>
+      <%= f.input :phone,
+      required: true,
+      autofocus: true,
+      input_html: { autocomplete: "phone", class: "form-control form-control" }, label: false, placeholder: "+ 54 9 34829234" %>
+      <p>Dirección</p>
+      <%= f.input :address,
+      required: true,
+      autofocus: true,
+      input_html: { autocomplete: "address", class: "form-control form-control" }, label: false, placeholder: "Direccion" %>
+
+      <p>Provincia</p>
+      <%= f.input :state,
+      required: true,
+      autofocus: true,
+      input_html: { autocomplete: "state", class: "form-control form-control" }, label: false, placeholder: "Provincia" %>
+      <p>Localidad</p>
+      <%= f.input :city,
+      required: true,
+      autofocus: true,
+      input_html: { autocomplete: "city", class: "form-control form-control" }, label: false, placeholder: "Localidad" %>
+
+      <p>Codigo Postal</p>
+      <%= f.input :postal,
+      required: true,
+      autofocus: true,
+      input_html: { autocomplete: "postal", class: "form-control form-control" }, label: false, placeholder: "Codigo postal" %>
+      <div class="form-actions mt-1">
+        <%= f.button :submit, "Confirmar Cambios", class: 'btn btn-gradient btn-block' %>
+      </div>
+      <% end %>
+      <div class=" text-center mt-3">
+        <p> Queres eliminar la cuenta? <%= link_to "Eliminar mi cuenta", registration_path(resource_name), data: { confirm: "Estas seguro? si eliminas tendras que volver a crear una para compar" }, method: :delete %></p>
+        <br>
+        <%= link_to "Volver", :back, class: "btn btn-dark" %>
+      </div>
+    </div>
   </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>
