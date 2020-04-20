@@ -17,7 +17,7 @@
         <% @product.variants.each do |variant| %>
         <% unless variant.stock == 0 %>
         <tr>
-          <td><%= variant.title %></td>
+          <td><%= link_to variant.title, variant_path(variant) %></td>
           <td><%= variant.stock %></td>
         </tr>
         <% end %>

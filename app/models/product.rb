@@ -2,7 +2,7 @@ class Product < ApplicationRecord
   belongs_to :category
   has_many :variants, dependent: :destroy
   validates :title, presence: true
-  has_many :line_items
+  has_many :line_items, dependent: :destroy
   monetize :price_cents
   validates :price, presence: true
   has_many_attached :photos
