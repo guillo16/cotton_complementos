@@ -7,20 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
 puts 'destroy database'
+Cart.delete_all
+Order.delete_all
 LineItem.delete_all
 Variant.delete_all
 Product.delete_all
 Category.delete_all
-
-
 Division.delete_all
 
 puts 'creating divisions'
-cocina = Division.create(title: 'Cocina', photo: 'https://images.unsplash.com/photo-1556912167-f556f1f39fdf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1960&q=80')
-fragancias = Division.create(title: 'Fragancias de hogar',photo: 'https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
+cocina = Division.create(title: 'Cocina', photo: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2035&q=80')
+fragancias = Division.create(title: 'Fragancias de hogar',photo: 'https://images.unsplash.com/photo-1503652601-557d07733ddc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80')
 ropa = Division.create(title: 'Indumentaria', photo: 'https://images.unsplash.com/photo-1499939667766-4afceb292d05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80')
-jabon = Division.create(title: 'Manos y cuerpos', photo: 'https://images.unsplash.com/photo-1474625121024-7595bfbc57ac?ixlib=rb-1.2.1&auto=format&fit=crop&w=1955&q=80')
-decoracion = Division.create(title: 'Decoracion', photo: 'https://images.unsplash.com/photo-1503652601-557d07733ddc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80')
+jabon = Division.create(title: 'Manos y cuerpos', photo: 'https://images.unsplash.com/photo-1554372562-ffdf99cba1e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1587&q=80')
+decoracion = Division.create(title: 'Decoracion', photo: 'https://images.unsplash.com/photo-1519974719765-e6559eac2575?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80')
 
 puts 'creating categories'
 

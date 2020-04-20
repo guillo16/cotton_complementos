@@ -22,7 +22,7 @@
     <% end %>
   </div>
   <div class="column">
-    <% @divisions.where(title: "Decoracion").each do |division| %>
+    <% @divisions.where(title: "Fragancias de hogar").each do |division| %>
     <%= link_to division_path(division) do  %>
     <div class="card-division-2" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= division.photo %>)">
       <div class="text-center">
@@ -45,7 +45,7 @@
   </div>
 </div>
 <div class="home-card-footer">
-  <% @divisions.where(title: "Fragancias de hogar").each do |division| %>
+  <% @divisions.where(title: "Decoracion").each do |division| %>
   <%= link_to division_path(division) do  %>
   <div class="card-division-footer" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= division.photo %>)">
     <div class="text-center">
