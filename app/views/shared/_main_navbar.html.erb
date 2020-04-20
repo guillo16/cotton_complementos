@@ -5,32 +5,42 @@
   <% end %>
 
   <div class="d-flex align-items-center d-lg-none ml-3">
-   <div class="cart-item">
-    <span class="icon is-small">
-      <i class="fas fa-shopping-bag">&nbsp;&nbsp;</i>
-    </span>
+    <div class="cart-item">
+      <% if total_cart_items %>
+      <%= link_to cart_path(@cart), class: "nav-link" do %>
+      <span class="icon is-small">
+        <i class="fas fa-shopping-bag"></i>
+      </span>
+      <span><%= cart_count_over_one %></span>
+      <% end %>
+      <% end %>
+    </div>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
   </div>
-  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <i class="fas fa-bars"></i>
-  </button>
-</div>
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-  <%  @divisions.each do |division| %>
-  <%= link_to division.title, division_path(division), class: "nav-link" %>
-  <% end %>
-  <% if user_signed_in? %>
-  <%= link_to "Perfil", user_path(current_user), class: "nav-link" %>
-  <% else %>
-  <%= link_to "Iniciar sesión", new_user_session_path, class: "nav-link" %>
-  <% end %>
-</ul>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <%  @divisions.each do |division| %>
+    <%= link_to division.title, division_path(division), class: "nav-link" %>
+    <% end %>
+    <% if user_signed_in? %>
+    <%= link_to "Perfil", user_path(current_user), class: "nav-link" %>
+    <% else %>
+    <%= link_to "Iniciar sesión", new_user_session_path, class: "nav-link" %>
+    <% end %>
+  </ul>
 </div>
 
 <div class="d-none d-lg-block guillo">
   <div class="cart-item">
+    <% if total_cart_items %>
+    <%= link_to cart_path(@cart), class: "nav-link" do %>
     <span class="icon is-small">
       <i class="fas fa-shopping-bag"></i>
     </span>
+    <span><%= cart_count_over_one %></span>
+    <% end %>
+    <% end %>
   </div>
 </div>
 </div>
