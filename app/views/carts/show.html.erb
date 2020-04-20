@@ -5,9 +5,6 @@
 <div class="cart-container d-lg-flex justify-content-between">
   <div class="cart-list-item">
     <%= render(@cart.line_items) %>
-    <div class="delete-cart">
-      <p><%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "btn btn-danger" %></p>
-    </div>
   </div>
   <div class="check-out-wrapper">
     <h2>Resumen de compra</h2>
