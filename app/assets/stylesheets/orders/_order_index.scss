@@ -26,6 +26,13 @@
   }
 }
 
+.order-index-container {
+ padding: 20px;
+ background-color: white;
+ border: 2px solid black;
+ margin-bottom: 40px;
+}
+
 .order-index-content {
   width: 90%;
   margin: 100px auto;
@@ -35,7 +42,14 @@
 }
 
 .order-index-footer {
-  padding-bottom: 16px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid lightgrey;
+  display: flex;
+  padding-top: 16px;
+  margin-top: 10px;
+  border-top: 1px solid lightgrey;
+  img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 20px;
+  }
 }

@@ -1,0 +1,17 @@
+<%= render 'shared/main_navbar' %>
+<div class="p-5">
+  <%= simple_form_for @variant do |f| %>
+  <div class="d-none">
+    <%= f.input :title, collection: [ "unico", "XS", "S", "M", "L", "XL", "38", "39", "40", "41", "42", "43", "44", "45"] %>
+  </div>
+
+  <p>Stock</p>
+  <%= f.input :stock, collection: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], :selected => 1 %>
+  <p>Para eliminar poner el stock en 0</p>
+
+  <%= f.submit 'Actualizar stock', class: 'btn btn-primary btn-lg btn-block' %>
+  <% end %>
+  <br>
+  <%= link_to 'Atras', :back, class: 'btn btn-dark btn-lg btn-block'  %>
+</div>
+

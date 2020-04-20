@@ -1,4 +1,8 @@
 class VariantsController < ApplicationController
+  def show
+    @variant = Variant.find(params[:id])
+  end
+
   def create
     @product = Product.find(params[:product_id])
     @variant = Variant.new(variant_params)
@@ -8,6 +12,16 @@ class VariantsController < ApplicationController
     else
       render 'products/show'
     end
+  end
+
+  def edit
+    @variant = Variant.find(params[:id])
+  end
+
+  def update
+    @variant = Variant.find(params[:id])
+    @variant.update(variant_params)
+    redirect_to variant_path(@variant)
   end
 
   def destroy

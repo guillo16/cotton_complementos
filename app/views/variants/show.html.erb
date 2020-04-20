@@ -1,0 +1,9 @@
+<%= render 'shared/main_navbar' %>
+<br><br>
+<div class="p-5 text-center">
+  <h2><strong>Talle:</strong><%= @variant.title %></h2>
+  <h2><strong>Stock:</strong>  <%= @variant.stock %></h2>
+
+  <%= link_to 'Editar Stock', edit_variant_path(@variant), class: 'btn btn-warning'  %>
+</div>
+
