@@ -1,25 +1,47 @@
-<h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+
+
+<div class="login-wrapper">
+  <div class="login-navbar">
+    <%= link_to root_path do  %>
+    <h2>COTTON</h2>
+    <h2>COMPLEMENTOS</h2>
+    <% end %>
   </div>
+  <div class="login-container">
+    <div class="text-center">
+      <hr class="hr-text" data-content="Registrarse">
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <p>Email</p>
+      <%= f.input :email,
+      required: true,
+      autofocus: true,
+      input_html: { autocomplete: "email", class: "form-control form-control" }, label: false, placeholder: "nombre@mail.com" %>
+      <p>Contraseña</p>
+      <%= f.input :password,
+      required: true,
+      label: false,
+      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+      input_html: { autocomplete: "new-password" } %>
+      <p>Confirmar contraseña</p>
+      <%= f.input :password_confirmation,
+      required: true,
+      label: false,
+      input_html: { autocomplete: "new-password" } %>
+    </div>
+
+    <div class="form-actions mt-1">
+      <%= f.button :submit, "Ingresar", class: 'btn btn-primary btn-block' %>
+    </div>
+    <% end %>
+    <div class="text-center mt-3">
+      <p>No tienes cuenta? <%= render "devise/shared/links" %></p>
+    </div>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
