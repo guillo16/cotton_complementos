@@ -17,11 +17,11 @@ Division.delete_all
 User.delete_all
 
 puts 'creating divisions'
-cocina = Division.create(title: 'Cocina', photo: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2035&q=80')
+cocina = Division.create(title: 'Cocina', photo: 'https://res.cloudinary.com/san-patricio/image/upload/v1587416599/6de81824-e0c6-4663-b1aa-f791350fae12_iwrdqr.jpg')
 fragancias = Division.create(title: 'Fragancias de hogar',photo: 'https://images.unsplash.com/photo-1503652601-557d07733ddc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80')
-ropa = Division.create(title: 'Indumentaria', photo: 'https://images.unsplash.com/photo-1499939667766-4afceb292d05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80')
-jabon = Division.create(title: 'Manos y cuerpos', photo: 'https://images.unsplash.com/photo-1554372562-ffdf99cba1e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1587&q=80')
-decoracion = Division.create(title: 'Decoracion', photo: 'https://images.unsplash.com/photo-1519974719765-e6559eac2575?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80')
+ropa = Division.create(title: 'Indumentaria', photo: 'https://res.cloudinary.com/san-patricio/image/upload/v1587416600/eaa9f16c-c382-491a-af89-c32e26fae21a_dchkf9.jpg')
+jabon = Division.create(title: 'Manos y cuerpos', photo: 'https://res.cloudinary.com/san-patricio/image/upload/v1587417526/IMG_82C0848C4B32-1_ph9y3w.jpg')
+decoracion = Division.create(title: 'Decoracion', photo: 'https://res.cloudinary.com/san-patricio/image/upload/v1587416911/IMG_9531_kdngds.jpg')
 
 puts 'creating categories'
 

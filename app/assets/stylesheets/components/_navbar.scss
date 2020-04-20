@@ -12,6 +12,7 @@
     margin-bottom: 0px;
     text-align: center;
     color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   }
   a {
     font-weight: bold;
@@ -77,25 +78,25 @@
    margin-bottom: 0px;
    text-align: center;
    font-weight: bold;
-  }
-  a {
-    font-weight: lighter;
-    color: #26262c;
-    text-shadow: none;
-  }
+ }
+ a {
+  font-weight: lighter;
+  color: #26262c;
+  text-shadow: none;
+}
 
-  i {
-    color: black;
-  }
-  .navbar-toggler {
-    border-color: black !important;
-    border: none !important;
-  }
+i {
+  color: black;
+}
+.navbar-toggler {
+  border-color: black !important;
+  border: none !important;
+}
 
-  .fa-bars {
-    font-size: 25px;
-    color: black;
-  }
+.fa-bars {
+  font-size: 25px;
+  color: black;
+}
 }
 
 .main-navbar .navbar-collapse {
