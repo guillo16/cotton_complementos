@@ -14,9 +14,20 @@
   </div>
 
   <div class="d-md-flex justify-content-between align-items-center">
-    <h2><strong>Nombre: </strong>Juan Gonzales </h2>
+    <h2><strong>Nombre: </strong><%= order.user.name %> <%= order.user.last_name %></h2>
     <h2><strong>Email: </strong><%= order.user.email %> </h2>
   </div>
+
+  <div class="d-md-flex justify-content-between align-items-center">
+    <h2><strong>Telefono: </strong><%= order.user.phone %></h2>
+    <h2><strong>Direcccion: </strong><%= order.user.address %> </h2>
+  </div>
+  <div class="d-md-flex justify-content-between align-items-center">
+    <h2><strong>Provincia: </strong><%= order.user.state %></h2>
+    <h2><strong>Ciudad: </strong><%= order.user.city %> </h2>
+  </div>
+  <h2><strong>Codigo Postal: </strong><%= order.user.postal %></h2>
+
 
   <% order.cart.line_items.each do |line_item| %>
   <div class="order-index-footer">
@@ -26,4 +37,3 @@
   <% end %>
   <% end%>
 </div>
-
