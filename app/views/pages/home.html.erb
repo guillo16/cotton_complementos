@@ -1,7 +1,14 @@
-<%= render 'shared/navbar' %>
+<%= render 'shared/main_navbar' %>
 <section id="home-banner">
-  <div class="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://res.cloudinary.com/san-patricio/image/upload/v1587417244/IMG_D596B411BE72-1_mh2hcp.jpg);">
-  </div>
+  <div class="home-banner" style="background-image: linear-gradient(to right, rgba(0,0,0,.6), rgba(250,250,250,.1)), url(https://res.cloudinary.com/san-patricio/image/upload/v1587489921/photo-1519643381401-22c77e60520e_ln1cdp.jpg);">
+    <div class="home-main-container">
+      <div class="mb-3">
+       <h1>COTTON</h1>
+       <h1>COMPLEMENTOS</h1>
+     </div>
+     <%= link_to 'Descubri mas', '#home-cards', class: 'btn-home'  %>
+   </div>
+ </div>
 </section>
 <section id="home-cards">
   <%= render 'home_cards' %>
