@@ -1,0 +1,17 @@
+<div class="product-form">
+  <h3><%= link_to 'Volver a la pagina principal', root_path  %></h3>
+  <h2>Crear Producto</h2>
+  <%= simple_form_for @product do |f| %>
+  <p>Nombre</p>
+  <%= f.input :title, placeholder: 'Nombre', label: false, input_html: { class: 'form-control form-control-lg'} %>
+  <p>Descripcion</p>
+  <%= f.input :description, placeholder: 'Descripcion', label: false, input_html: { class: 'form-control form-control-lg' , id:"exampleFormControlTextarea1", rows:"5" } %>
+  <p>Foto</p>
+  <%= f.input :photos, as: :file, label: false, input_html: { multiple: true } %>
+  <p>Precio</p>
+  <%= f.input :price, label: false, input_html: { class: 'form-control form-control-lg'} %>
+  <p>Categoria</p>
+  <%= f.association :category, label: false, input_html: { class: 'form-control form-control-lg'} %>
+  <%= f.submit 'Crear Producto', class: 'btn btn-primary btn-lg btn-block' %>
+  <% end %>
+</div>

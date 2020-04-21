@@ -24,7 +24,12 @@
         <% end %>
       </tbody>
     </table>
+    <br><br>
+    <%= link_to 'Editar Producto', edit_product_path(@product), class: 'btn btn-dark btn-lg btn-block'  %>
+  <%= link_to 'Destruir Producto', @product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-lg btn-block' %>
   </div>
+
+
 </section>
 <% else %>
 <% end %>

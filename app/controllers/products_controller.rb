@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
-  before_action :set_products, only: %i[show destroy]
+  before_action :set_products, only: %i[show edit update destroy]
 
   def index
     if current_user.admin?
@@ -34,13 +34,17 @@ class ProductsController < ApplicationController
     end
   end
 
-  def update
-  end
-
   def edit
   end
 
+  def update
+    @product.update(product_params)
+    redirect_to products_path
+  end
+
   def destroy
+    @product.destroy
+    redirect_to products_path
   end
 
   private
