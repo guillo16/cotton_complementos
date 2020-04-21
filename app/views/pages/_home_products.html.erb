@@ -1,5 +1,5 @@
 <div class="home-product-wrapper">
-  <h3>Mas Populares</h3>
+  <h3>Más Populares</h3>
   <div class="division-cards-wrapper">
     <% @products.last(8).each do |product| %>
     <%= render 'shared/product_home_card', product: product %>
@@ -7,7 +7,7 @@
   </div>
 </div>
 <div class="home-product-wrapper">
-  <h3>Mas Vendidos</h3>
+  <h3>Más Vendidos</h3>
   <div class="division-cards-wrapper">
     <% @products.drop(8).first(8).each do |product| %>
     <%= render 'shared/product_home_card', product: product %>
