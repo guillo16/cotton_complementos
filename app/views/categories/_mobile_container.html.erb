@@ -1,0 +1,36 @@
+<div class="mobile-button-container">
+  <h2><%= @category.title %></h2>
+  <div class="mobile-button">
+    <div class="dropdown">
+      <button class="categories-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Categorias <i class="fas fa-chevron-down"></i>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <p class="dropdown-item" style="margin-bottom: 0px; font-size:13px; margin-top: 0px;text-decoration: underline; color: #167a92;"><%= @category.title %></p>
+        <div class="dropdown-divider"></div>
+        <% division_title =  @category.division.title %>
+        <% category_links = @categories.filter { |category| category.division.title == division_title } %>
+        <% category_links.each do |g| %>
+        <%= link_to g.title, category_path(g), class: "dropdown-item"%>
+        <div class="dropdown-divider"></div>
+        <% end %>
+      </div>
+    </div>
+    <div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-filter dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Ordenar por
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <%= link_to category_path(created_at: :desc),class: 'dropdown-item' do %>
+          Lo mas reciente
+          <% end %>
+          <%= link_to category_path(price_cents: :desc),class: 'dropdown-item' do %>Menor $ a Mayor $$$
+          <% end %>
+          <%= link_to "Mayor $$$ a Menor $", category_path(min_price: 1, max_price: 5000000),class: 'dropdown-item' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p><%= @category.products.count %> productos</p>
+</div>

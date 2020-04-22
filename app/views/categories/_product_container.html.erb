@@ -1,0 +1,28 @@
+<div class= "product-wrapper">
+  <div class="product-title d-md-flex justify-content-between">
+    <div>
+      <h2><%= @category.title %></h2>
+      <p><%= @category.products.count %> productos</p>
+    </div>
+    <div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-filter dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Ordenar por
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <%= link_to category_path(created_at: :desc),class: 'dropdown-item' do %>
+          Lo mas reciente
+          <% end %>
+          <%= link_to category_path(price_cents: :desc),class: 'dropdown-item' do %>Menor $ a Mayor $$$
+          <% end %>
+          <%= link_to "Mayor $$$ a Menor $", category_path(min_price: 1, max_price: 5000000),class: 'dropdown-item' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class= "product-container">
+    <% @products.each do |product| %>
+    <%= render 'shared/product_card', product: product %>
+    <% end %>
+  </div>
+</div>
