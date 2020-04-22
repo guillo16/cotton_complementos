@@ -24,13 +24,8 @@
         <% end %>
       </div>
     </div>
-    <div>
-      <button class="filter-button">filtros</button>
-    </div>
   </div>
 </div>
-
-
 <div class="category-wrapper">
   <div class="category-sidebar">
     <h3>Categoria Principal:</h3>
@@ -39,19 +34,6 @@
     <% @division.categories.each do |category| %>
     <h2><%= link_to category.title, category_path(category)%></h2>
     <% end %>
-    <h3>Filtros:</h3>
-    <div class="filter-sidebar">
-      <h4>Precio</h4>
-      +
-    </div>
-    <div class="filter-sidebar">
-      <h4>Fecha</h4>
-      +
-    </div>
-    <div class="filter-sidebar">
-      <h4>Talle</h4>
-      +
-    </div>
   </div>
   <div class="product-container">
     <% @division.categories.each do |category| %>
