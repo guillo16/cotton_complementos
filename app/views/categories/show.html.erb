@@ -1,9 +1,5 @@
 <%= render 'shared/main_navbar' %>
-<div class="division-list">
-  <% @divisions.each do |division| %>
-  <%= link_to division.title, division_path(division)  %>
-  <% end %>
-</div>
+<br><br><br>
 <h2 class="category-path"><%= @category.division.title%> / <%= @category.title %></h2>
 <div class="mobile-button-container">
   <h2><%= @category.title %></h2>
@@ -41,11 +37,26 @@
     <h2><%= g.title %></h2>
     <% end %>
     <% end %>
+
     <h3>Filtros:</h3>
     <div class="filter-sidebar">
       <h4>Precio</h4>
       +
     </div>
+    <div>
+      <%= link_to category_path(created_at: :desc) do %>
+      Lo mas reciente
+      <% end %>
+      <%= link_to category_path(price_cents: :desc) do %>Lo mas barato
+      <% end %>
+      <%= link_to "mas caro", category_path(min_price: 1, max_price: 5000000) %>
+    </div>
+    <div class="filter-sidebar">
+      <div>
+      </div>
+
+    </div>
+
     <div class="filter-sidebar">
       <h4>Fecha</h4>
       +
@@ -61,9 +72,11 @@
       <p><%= @category.products.count %> productos</p>
     </div>
     <div class= "product-container">
-      <% @category.products.each do |product| %>
+      <% @products.each do |product| %>
       <%= render 'shared/product_card', product: product %>
       <% end %>
     </div>
   </div>
 </div>
+
+
