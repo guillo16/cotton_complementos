@@ -11,6 +11,11 @@
   }
 }
 
+.carousel-control-next,
+.carousel-control-prev {
+  filter: invert(100%);
+}
+
 .product-show-content {
   width: 90%;
   margin: 0 auto;
@@ -62,7 +67,7 @@
     font-size: 16px;
     margin-bottom: 0px;
   }
-   p {
+  p {
     color: black;
     font-size: 13px;
     margin-top: 14px;
