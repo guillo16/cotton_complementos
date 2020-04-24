@@ -6,9 +6,7 @@ class ProductsController < ApplicationController
     @categories = Category.order(title: :asc)
     if current_user.admin?
       @products = Product.all
-      if params["title"]
-        @products = Product.order(title: :asc)
-      elsif params["category_id"]
+      if params["category_id"]
         @products = Product.where(category_id: params["category_id"]).order(price_cents: :asc)
       elsif params["price_cents"]
         @products = Product.order(price_cents: :desc)

@@ -5,3 +5,36 @@
     top: 74px;
   }
 }
+
+
+.index-filters {
+  padding: 30px;
+}
+
+.modal-body {
+  p {
+    margin: 0px;
+    padding: 5px;
+    background-color: white;
+  }
+  a {
+    color: grey;
+    text-decoration: none;
+    &:hover {
+      color: lightgrey;
+    }
+
+  }
+}
+
+
+@media(max-width: 600px) {
+  .table td {
+    padding: 20px 2px !important;
+    font-size: 13px;
+  }
+  .table .thead-dark th {
+    padding: 10px 2px !important;
+    font-size: 13px;
+  }
+}
