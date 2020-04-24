@@ -5,10 +5,20 @@ class ProductsController < ApplicationController
   def index
     if current_user.admin?
       @products = Product.all
+      if params["title"]
+        @products = Product.order(title: :asc)
+      elsif params["category_id"]
+        @products = Product.where(category_id: params["category_id"]).order(price_cents: :asc)
+      elsif params["price_cents"]
+        @products = Product.order(price_cents: :asc)
+      else
+        @products
+      end
     else
       redirect_to root_path
       flash[:notice] = "Accesso denegado!"
     end
+    @categories = Category.order(title: :asc)
   end
 
   def show

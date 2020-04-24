@@ -3,10 +3,11 @@
   <table class="table table-striped ">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">Nombre</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Stock</th>
-        <th scope="col"></th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th>Categoria</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -15,9 +16,20 @@
         <td><%= product.title %></td>
         <td><%= product.price %></td>
         <td><%= product.variants.sum(:stock) %></td>
+        <td><%= product.category.title %></td>
         <td><%= link_to 'Ver Producto', product_path(product) %></td>
       </tr>
       <% end %>
     </tbody>
   </table>
 </div>
+
+
+<% @categories.each do |category| %>
+<%= link_to category.title , products_path(category_id: category.id) %>
+<% end %>
+
+<h5><%= link_to "Caminos", products_path(category_id: 353) %></h5>
+<h5><%= link_to "Ordenar Por Categoria", products_path(category_id: :asc) %></h5>
+
+<h5><%= link_to "Ordenar Por Precio", products_path(price: :asc) %></h5>
