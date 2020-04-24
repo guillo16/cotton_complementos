@@ -1,12 +1,19 @@
 <%= render 'shared/main_navbar' %>
 <div class="product-stock-wrapper">
-  <table class="table table-striped ">
+  <div class="index-filters text-center d-md-flex justify-content-around">
+    <p><%= link_to "ORDENAR POR PRECIO", products_path(price_cents: :desc), class: 'btn btn-order' %></p>
+    <p> <button type="button" class="btn btn-order" data-toggle="modal" data-target="#exampleModalLong">
+      FILTRAR POR CATEGORIA
+    </button></p>
+  </div>
+  <table class="table table-striped table-bordered text-center">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">Nombre</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Stock</th>
-        <th scope="col"></th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th>Categoria</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -15,9 +22,31 @@
         <td><%= product.title %></td>
         <td><%= product.price %></td>
         <td><%= product.variants.sum(:stock) %></td>
+        <td><%= product.category.title %></td>
         <td><%= link_to 'Ver Producto', product_path(product) %></td>
       </tr>
       <% end %>
     </tbody>
   </table>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Categorias</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <% @categories.each do |category| %>
+        <p><%= link_to category.title , products_path(category_id: category.id) %></p>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark btn-lg btn-block" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
 </div>
