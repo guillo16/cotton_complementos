@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   before_action :set_products, only: %i[show edit update destroy]
 
   def index
+    @categories = Category.order(title: :asc)
     if current_user.admin?
       @products = Product.all
       if params["title"]
@@ -10,7 +11,7 @@ class ProductsController < ApplicationController
       elsif params["category_id"]
         @products = Product.where(category_id: params["category_id"]).order(price_cents: :asc)
       elsif params["price_cents"]
-        @products = Product.order(price_cents: :asc)
+        @products = Product.order(price_cents: :desc)
       else
         @products
       end
@@ -18,7 +19,6 @@ class ProductsController < ApplicationController
       redirect_to root_path
       flash[:notice] = "Accesso denegado!"
     end
-    @categories = Category.order(title: :asc)
   end
 
   def show
