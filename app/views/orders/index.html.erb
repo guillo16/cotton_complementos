@@ -20,14 +20,14 @@
     </div>
 
     <div class="d-md-flex justify-content-between align-items-center">
-      <h2><strong>Telefono: </strong><%= order.user.phone %></h2>
-      <h2><strong>Direcccion: </strong><%= order.user.address %> </h2>
+      <h2><strong>Teléfono: </strong><%= order.user.phone %></h2>
+      <h2><strong>Direccción: </strong><%= order.user.address %> </h2>
     </div>
     <div class="d-md-flex justify-content-between align-items-center">
       <h2><strong>Provincia: </strong><%= order.user.state %></h2>
       <h2><strong>Ciudad: </strong><%= order.user.city %> </h2>
     </div>
-    <h2><strong>Codigo Postal: </strong><%= order.user.postal %></h2>
+    <h2><strong>Código Postal: </strong><%= order.user.postal %></h2>
 
 
     <% order.cart.line_items.each do |line_item| %>
