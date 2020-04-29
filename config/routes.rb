@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   post 'procesar-pago', to: "payments#create"
   resources :divisions, only: :show
-  resources :categories, only: :show
+  resources :categories
   resources :products do
     resources :variants, only: [:new, :create]
   end
