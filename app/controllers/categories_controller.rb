@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action :set_category, only: [:show, :edit, :update]
   skip_before_action :authenticate_user!, only: [:show]
 
   def show
@@ -14,5 +15,17 @@ class CategoriesController < ApplicationController
       @products
     end
     @categories = Category.all
+  end
+
+  def new
+  end
+
+  def create
+  end
+
+  private
+
+  def set_category
+    @category = Category.find(params[:id])
   end
 end
