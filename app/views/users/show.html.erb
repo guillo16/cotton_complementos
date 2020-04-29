@@ -2,6 +2,7 @@
 <% if current_user.admin? %>
 <div class="user-show-wrapper">
   <h2>Bienvenido <%= current_user.email %></h2>
+  <%= link_to 'Crear Categoria', new_category_path, class: 'btn btn-warning btn-lg btn-block'  %>
   <%= link_to 'Crear Producto', new_product_path, class: 'btn btn-dark btn-lg btn-block'  %>
   <%= link_to 'Inventario de Productos', products_path, class: 'btn btn-primary btn-lg btn-block'  %>
   <%= link_to 'Ver Ordenes', orders_path, class: 'btn btn-danger btn-lg btn-block'  %>
