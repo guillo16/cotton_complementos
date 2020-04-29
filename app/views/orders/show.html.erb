@@ -9,7 +9,6 @@
     <div class="d-flex align-items-center  justify-content-center">
       <h1>Gracias por tu compra</h1><img src="https://cdn1.iconfinder.com/data/icons/color-bold-style/21/34-512.png" alt="" style="width: 40px;">
     </div>
-
     <% @order.cart.line_items.each do |line| %>
     <div class="order-show-container d-flex">
       <div class="product-order-show">
@@ -26,7 +25,7 @@
     <% end %>
     <div class="order-show-footer">
       <p>Estado:<strong> <%= @order.state %> <i class="far fa-check-circle"></i></p></strong>
-      <p>Total: <strong> <%= humanized_money_with_symbol(@order.amount) %> <i class="far fa-check-circle"></i></p></strong>
+      <p>Total: <strong> <%= humanized_money_with_symbol(@order.amount) %> <i class="far fa-check-circle"></i></strong></p>
 
     </div>
     <div class="order-show-button">
@@ -34,5 +33,9 @@
       <br>
       <%= link_to 'Ver mas Productos', root_path, class: 'btn btn-gradient btn-lg btn-block'  %>
     </div>
+    <div class="text-center">
+      <p style="font-size: 12px; font-weight: bold; margin-bottom: 0px; margin-top: 20px;">En breve nos contactaremos con usted para convenir el pago y la entrega</p>
+    </div>
   </div>
+
 </div>

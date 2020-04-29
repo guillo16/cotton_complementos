@@ -1,0 +1,16 @@
+<div class="sing-up-wrapper">
+  <div class="sing-up-navbar">
+    <%= link_to root_path do  %>
+    <h2>COTTON</h2>
+    <h2>COMPLEMENTOS</h2>
+    <% end %>
+  </div>
+  <div class="sing-up-container">
+    <div class="text-center">
+      <hr class="hr-text" data-content="Crear Categoria">
+    </div>
+    <%= render 'form' %>
+    <br>
+    <%= link_to 'Volver', :back, class: 'btn btn-danger btn-block'  %>
+  </div>
+</div>

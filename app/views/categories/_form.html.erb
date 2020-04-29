@@ -1,0 +1,6 @@
+<%= simple_form_for @category do |f|%>
+<%= f.input :title %>
+<%= f.association :division %>
+<%= f.submit 'Confirmar', class: 'btn btn-gradient btn-block' %>
+
+<% end %>
