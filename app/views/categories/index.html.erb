@@ -1,0 +1,30 @@
+<%= render 'shared/main_navbar' %>
+<% if current_user.admin? %>
+<br><br><br>
+<div class="text-center">
+  <table class="table table-striped">
+  <thead class="thead-dark" >
+    <tr>
+      <th scope="col" class="text-left">Categoria</th>
+      <th scope="col">Productos</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Destruir</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+    <tr>
+      <td class="text-left"><%= category.title %></td>
+      <td><%= category.products.count %></td>
+      <td><%= link_to 'Editar',edit_category_path(category), class: 'btn btn-warning'  %></td>
+      <td><%= link_to 'Destruir', category, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<% else %>
+<% end %>
+
+
+
