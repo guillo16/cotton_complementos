@@ -1,5 +1,4 @@
 <%= render 'shared/main_navbar' %>
-<% if current_user.admin? %>
 <br><br><br>
 <div class="text-center">
   <table class="table table-striped">
@@ -17,14 +16,9 @@
       <td class="text-left"><%= category.title %></td>
       <td><%= category.products.count %></td>
       <td><%= link_to 'Editar',edit_category_path(category), class: 'btn btn-warning'  %></td>
-      <td><%= link_to 'Destruir', category, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+      <td><%= link_to 'Destruir', category, method: :delete, data: { confirm: 'Estas seguro, se destruiran todos los productos?' }, class: 'btn btn-danger' %></td>
     </tr>
     <% end %>
   </tbody>
 </table>
 </div>
-<% else %>
-<% end %>
-
-
-

@@ -3,11 +3,15 @@ class CategoriesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
 
   def index
-    @categories = Category.order(title: :asc)
+    if current_user.admin?
+      @categories = Category.order(title: :asc)
+    else
+      redirect_to root_path
+      flash[:notice] = "Accesso denegado!"
+    end
   end
 
   def show
-    @category = Category.find(params[:id])
     @products = @category.products
     if params["created_at"]
       @products = @category.products.order(created_at: :desc)

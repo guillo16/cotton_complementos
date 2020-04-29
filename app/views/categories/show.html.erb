@@ -1,15 +1,5 @@
 <%= render 'shared/main_navbar' %>
 <br><br><br>
-<% if user_signed_in? %>
-<% if current_user.admin? %>
-<%= link_to 'Editar categoria',edit_category_path(@category), class: 'btn btn-warning btn-lg btn-block'  %>
- <%= link_to 'Destruir Categoria', @category, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-lg btn-block' %>
-
-<% else %>
-<% end %>
-<% else %>
-
-<% end %>
 <h2 class="category-path"><%= @category.division.title%> / <%= @category.title %></h2>
 <section id="mobile-container">
   <%= render 'mobile_container' %>
