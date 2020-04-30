@@ -1,17 +1,15 @@
 class PaymentsController < ApplicationController
- before_action :set_order
+  before_action :set_order
+  def new
+  end
 
- def new
- end
-
- def create
+  def create
     # DESTROY CART
     @cart = Cart.find(session[:cart_id])
     session[:cart_id] = nil
     @order.update(state: 'Encargado')
-    redirect_to order_path(@order)
     OrderMailer.with(order: @order).new_order_email.deliver_later
-
+    redirect_to order_path(@order)
   end
 
   private
