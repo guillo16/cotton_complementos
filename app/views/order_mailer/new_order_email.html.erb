@@ -1,0 +1,11 @@
+<p>Tienes una nueva orden de <%= @order.user.email %></p>
+<p>
+  Detalle de la orden<br>
+  --------------------------
+
+<p><%= order.amount %></p>
+<% order.cart.line_items.each do |line_item| %>
+<h2><strong>Producto: </strong><%= line_item.product.title %></h2>
+<h2><strong>Cantidad: </strong><%= line_item.quantity %></h2>
+<h2><strong>Talle: </strong><%= line_item.variant.title %></h2>
+<% end %>
