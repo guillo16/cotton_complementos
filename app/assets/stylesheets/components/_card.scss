@@ -16,6 +16,14 @@
     height: 300px;
     object-fit: cover;
   }
+   a {
+    text-decoration: none;
+  }
+  &:hover {
+    h2 {
+      color: #167a92;
+    }
+  }
 }
 //cards in the homepage
 .product_home_card {
@@ -37,6 +45,14 @@
     height: 220px;
     object-fit: cover;
     margin-right: 36px;
+  }
+  a {
+    text-decoration: none;
+  }
+  &:hover {
+    h2 {
+      color: #167a92;
+    }
   }
 }
 
