@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'payments/new'
+  get 'products/search', to: 'products#search'
   devise_for :users
   root to: 'pages#home'
   post 'procesar-pago', to: "payments#create"
