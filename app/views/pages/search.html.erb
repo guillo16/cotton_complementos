@@ -1,0 +1,26 @@
+<div class="search-container">
+  <div class="text-center">
+    <h2>Cotton</h2>
+    <h2>Complementos</h2>
+  </div>
+  <div class="exit-search">
+    <%= link_to :back  do %>
+    <i class="fas fa-times"></i>
+    <% end %>
+  </div>
+
+  <div class="search-form">
+    <%= form_tag products_search_path, method: :get do %>
+    <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+      placeholder: "Find a movie"
+      %>
+      <%= submit_tag "Buscar", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+
+  </div>
+
+
+

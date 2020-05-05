@@ -25,11 +25,10 @@ class ProductsController < ApplicationController
       products.title @@ :query \
       OR categories.title @@ :query \
       "
-      @products =Product.joins(:category).where(sql_query, query: "%#{params[:query]}%")
+      @products = Product.joins(:category).where(sql_query, query: "%#{params[:query]}%")
     else
-      @products =Product.all
+      @products = Product.all
     end
-
   end
 
   def show
