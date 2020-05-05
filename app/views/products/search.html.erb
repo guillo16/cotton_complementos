@@ -1,4 +1,10 @@
-<% @products.each do |product| %>
-<%= product.title %>
-<%= product.category.title %>
-<% end %>
+<%= render 'shared/main_navbar' %>
+<div class= "product-search-wrapper">
+  <p>Resultados(<%= @products.count %>)</p>
+
+  <div class= "product-container searcheable">
+    <% @products.each do |product| %>
+    <%= render 'shared/product_card', product: product %>
+    <% end %>
+  </div>
+</div>
