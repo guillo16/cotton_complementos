@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
   get 'payments/new'
+  get 'products/search', to: 'products#search'
   devise_for :users
   root to: 'pages#home'
+  get 'pages/search', to: 'pages#search'
+
   post 'procesar-pago', to: "payments#create"
   resources :divisions, only: :show
   resources :categories
