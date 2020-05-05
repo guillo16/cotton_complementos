@@ -23,7 +23,52 @@
   }
 }
 
+.search-form {
+  margin-top: 40px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid black;
+}
 
+.search-input {
+  border: none;
+  background: transparent;
+  &:focus {
+    outline: none;
+  }
+}
+.form-inline {
+  justify-content: space-between;
+}
+
+.btn-search {
+  border: none;
+  background: transparent;
+  color: grey;
+  font-size: 24px;
+  &:focus {
+    outline: none;
+  }
+}
+
+.search-footer {
+  h2 {
+    margin-bottom: 20px;
+    color: rgb(74, 73, 74);
+
+    font-weight: bold;
+  }
+  p {
+
+    margin-bottom: 0px;
+  }
+  a {
+    color: rgb(74, 73, 74);
+    &:hover {
+      text-decoration: none;
+      color: grey;
+    }
+  }
+}
 
 @media(max-width: 700px) {
   .search-container {
