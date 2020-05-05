@@ -31,10 +31,22 @@
   .navbar-toggler {
     background-color: transparent !important;
     border: none !important;
+    &:focus {
+      outline: none !important;
+    }
+
+
   }
   .navbar-toggler-icon {
     border-color: white !important;
+
   }
+}
+
+.collapsed {
+  &:focus {
+      outline: none !important;
+    }
 }
 
 .navbar-home .navbar-collapse {
@@ -67,6 +79,10 @@
     color: black;
   }
 }
+
+.responsive-navbar {
+  margin-left: -30px;
+}
 //navbar rest of the pages
 .main-navbar {
   background-color: white;
@@ -81,6 +97,7 @@
    font-weight: bold;
  }
  a {
+  font-size: 15px;
   font-weight: lighter;
   color: #26262c;
   text-shadow: none;
@@ -92,6 +109,9 @@ i {
 .navbar-toggler {
   border-color: black !important;
   border: none !important;
+    &:focus {
+      outline: none !important;
+    }
 }
 
 .fa-bars {
