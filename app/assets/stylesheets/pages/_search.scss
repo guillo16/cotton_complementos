@@ -1,0 +1,33 @@
+.search-container {
+  width: 600px;
+  margin: 0 auto;
+  padding-top: 8px;
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    text-align: center;
+    color: black;
+
+  }
+
+}
+
+.exit-search {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  i {
+    font-size: 30px;
+    color: black;
+  }
+}
+
+
+
+@media(max-width: 700px) {
+  .search-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
