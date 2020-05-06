@@ -41,10 +41,16 @@
     font-size: 22px;
     font-weight: bold;
   }
-  a {
+  h3 {
     font-size: 14px;
     color: #167a92;
+    &:hover {
+      text-decoration: underline;
+    }
   }
+}
+.hidden {
+  display: none;
 }
 
 .nav-pills .nav-link.active {

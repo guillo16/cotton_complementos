@@ -13,83 +13,54 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <p>Email</p>
-      <%= f.input :email,
-      required: true,
-      autofocus: true,
-      input_html: { autocomplete: "email", class: "form-control form-control" }, label: false, placeholder: "usuario@mail.com" %>
       <div class="d-flex justify-content-between">
         <div class="mr-3">
           <p>Nombre</p>
           <%= f.input :name,
           required: true,
           autofocus: true,
-          input_html: { autocomplete: "nombre", class: "form-control form-control" }, label: false, placeholder: "Cotton" %>
+          input_html: { autocomplete: "nombre", class: "form-control form-control" }, label: false %>
         </div>
         <div class="ml-3">
           <p>Apellido</p>
           <%= f.input :last_name,
           required: true,
           autofocus: true,
-          input_html: { autocomplete: "apellido", class: "form-control form-control" }, label: false, placeholder: "Complementos" %>
+          input_html: { autocomplete: "apellido", class: "form-control form-control" }, label: false %>
         </div>
       </div>
       <p>Telefono</p>
       <%= f.input :phone,
       required: true,
       autofocus: true,
-      input_html: { autocomplete: "phone", class: "form-control form-control" }, label: false, placeholder: "+ 54 9 34829234" %>
-      <div class="d-flex justify-content-between">
-        <div class="mr-3">
-          <p>Dirección</p>
-          <%= f.input :address,
-          required: true,
-          autofocus: true,
-          input_html: { autocomplete: "address", class: "form-control form-control" }, label: false, placeholder: "Direccion" %>
-        </div>
-        <div class="ml-3">
-          <p>Provincia</p>
-          <%= f.input :state,
-          required: true,
-          autofocus: true,
-          input_html: { autocomplete: "state", class: "form-control form-control" }, label: false, placeholder: "Provincia" %>
-        </div>
-      </div>
-      <div class="d-flex justify-content-between">
-        <div class="mr-3">
-          <p>Localidad</p>
-          <%= f.input :city,
-          required: true,
-          autofocus: true,
-          input_html: { autocomplete: "city", class: "form-control form-control" }, label: false, placeholder: "Localidad" %>
-        </div>
-        <div class="ml-3">
-          <p>Codigo Postal</p>
-          <%= f.input :postal,
-          required: true,
-          autofocus: true,
-          input_html: { autocomplete: "postal", class: "form-control form-control" }, label: false, placeholder: "Codigo postal" %>
-        </div>
-      </div>
-      <p>Contraseña</p>
-      <%= f.input :password,
-      required: true,
-      label: false,
-      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-      input_html: { autocomplete: "new-password" } %>
-      <p>Confirmar contraseña</p>
-      <%= f.input :password_confirmation,
-      required: true,
-      label: false,
-      input_html: { autocomplete: "new-password" } %>
-    </div>
+      input_html: { autocomplete: "phone", class: "form-control form-control" }, label: false %>
+      <div class="pb-5">
+       <p>Email</p>
+       <%= f.input :email,
+       required: true,
+       autofocus: true,
+       input_html: { autocomplete: "email", class: "form-control form-control" }, label: false %>
 
-    <div class="form-actions mt-1">
-      <%= f.button :submit, "Ingresar", class: 'btn btn-primary btn-block' %>
-    </div>
-    <% end %>
-    <div class="text-center mt-3">
-      <p>No tienes cuenta? <%= render "devise/shared/links" %></p>
-    </div>
+     </div>
+     <p>Contraseña</p>
+     <%= f.input :password,
+     required: true,
+     label: false,
+     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+     input_html: { autocomplete: "new-password" } %>
+     <p>Confirmar contraseña</p>
+     <%= f.input :password_confirmation,
+     required: true,
+     label: false,
+     input_html: { autocomplete: "new-password" } %>
+   </div>
+
+   <div class="form-actions mt-1">
+    <%= f.button :submit, "Ingresar", class: 'btn btn-primary btn-block' %>
   </div>
+  <% end %>
+  <div class="text-center mt-3">
+    <p>No tienes cuenta? <%= render "devise/shared/links" %></p>
+  </div>
+</div>
 </div>
