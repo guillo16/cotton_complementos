@@ -1,4 +1,5 @@
 <%= render 'shared/main_navbar' %>
+<% if @user == current_user %>
 <% if current_user.admin? %>
 <div class="user-show-wrapper">
   <h2>Bienvenido <%= current_user.email %></h2>
@@ -44,3 +45,8 @@
     <% end %>
   </div>
 </div>
+<% else %>
+<%= render 'shared/denied' %>
+<% end %>
+<%= render 'shared/main_footer' %>
+
