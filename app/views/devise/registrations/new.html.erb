@@ -29,38 +29,37 @@
           input_html: { autocomplete: "apellido", class: "form-control form-control" }, label: false %>
         </div>
       </div>
-      <p>Telefono</p>
-      <%= f.input :phone,
+      <div class="pb-5">
+        <p>Telefono</p>
+        <%= f.input :phone,
+        required: true,
+        autofocus: true,
+        input_html: { autocomplete: "phone", class: "form-control form-control" }, label: false %>
+      </div>
+      <p>Email</p>
+      <%= f.input :email,
       required: true,
       autofocus: true,
-      input_html: { autocomplete: "phone", class: "form-control form-control" }, label: false %>
-      <div class="pb-5">
-       <p>Email</p>
-       <%= f.input :email,
-       required: true,
-       autofocus: true,
-       input_html: { autocomplete: "email", class: "form-control form-control" }, label: false %>
+      input_html: { autocomplete: "email", class: "form-control form-control" }, label: false %>
+      <p>Contraseña</p>
+      <%= f.input :password,
+      required: true,
+      label: false,
+      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+      input_html: { autocomplete: "new-password" } %>
+      <p>Confirmar contraseña</p>
+      <%= f.input :password_confirmation,
+      required: true,
+      label: false,
+      input_html: { autocomplete: "new-password" } %>
+    </div>
 
-     </div>
-     <p>Contraseña</p>
-     <%= f.input :password,
-     required: true,
-     label: false,
-     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-     input_html: { autocomplete: "new-password" } %>
-     <p>Confirmar contraseña</p>
-     <%= f.input :password_confirmation,
-     required: true,
-     label: false,
-     input_html: { autocomplete: "new-password" } %>
-   </div>
-
-   <div class="form-actions mt-1">
-    <%= f.button :submit, "Ingresar", class: 'btn btn-primary btn-block' %>
+    <div class="form-actions mt-1">
+      <%= f.button :submit, "Ingresar", class: 'btn btn-primary btn-block' %>
+    </div>
+    <% end %>
+    <div class="text-center mt-3">
+      <p>No tienes cuenta? <%= render "devise/shared/links" %></p>
+    </div>
   </div>
-  <% end %>
-  <div class="text-center mt-3">
-    <p>No tienes cuenta? <%= render "devise/shared/links" %></p>
-  </div>
-</div>
 </div>
