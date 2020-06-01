@@ -38,7 +38,13 @@
         <%= submit_tag 'COMPRAR', class: 'btn btn-dark btn-lg btn-block' %>
         <% else %>
         <button class= 'btn btn-secondary btn-lg btn-block 'disabled>AGOTADO</button>
+
         <% end %>
+        <% end %>
+        <% stock = @product.variants.sum(:stock) %>
+        <% if stock < 1 %>
+        <%= link_to 'Encargar', '#' %>
+        <% else %>
         <% end %>
       </div>
     </div>
