@@ -41,7 +41,7 @@
 <section id="product-footer">
   <div class="show-product-footer">
     <div class="product-display">
-      <h4>Tambien te puede interesar</h4>
+      <p>Tambien te puede interesar</p>
     </div>
     <div class="division-cards-wrapper">
       <% @products.last(8).each do |product| %>
@@ -50,3 +50,5 @@
     </div>
   </div>
 </section>
+<%= render 'shared/main_footer' %>
+

@@ -43,52 +43,77 @@
   margin: 30px 0px;
 }
 
-.product-show-details {
+//Product javascript buttons under shop button
+.product-show-list {
   padding: 16px 0px;
+  border-bottom: 1px solid lightgrey;
   border-top: 1px solid lightgrey;
-  border-bottom: 1px solid lightgrey;
-  h4 {
+  p {
+    color: black;
     font-size: 16px;
     margin-bottom: 0px;
   }
+  &:hover {
+    p {
+      color: #167a92;
+    }
+  }
+}
 
+.product-show-list-hide {
+  border-bottom: 1px solid lightgrey;
   p {
-    color: black;
     font-size: 14px;
-    margin-top: 14px;
     color: grey;
+    padding-bottom: 20px;
   }
-}
 
-.product-show-details-2{
-  padding: 16px 0px;
-  border-bottom: 1px solid lightgrey;
-  h4 {
-    font-size: 16px;
-    margin-bottom: 0px;
-  }
-  p {
-    color: black;
-    font-size: 13px;
-    margin-top: 14px;
-    color: grey;
-  }
-}
-
-.product-display {
-  padding: 16px 0px;
-  border-bottom: 1px solid lightgrey;
-  h4 {
-    margin-top: 40px;
-    font-size: 19px;
-    margin-bottom: 0px;
-    font-weight: bold;
-  }
 }
 
 .show-product-footer {
   width: 90%;
   margin: 0 auto;
+}
+
+.none {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+
+.product-shop-list {
+  padding: 16px 0px;
+  border-bottom: 1px solid lightgrey;
+  p {
+    color: black;
+    font-size: 16px;
+    margin-bottom: 0px;
+  }
+  &:hover {
+    p {
+      color: #167a92;
+    }
+  }
+}
+
+.border-transparent {
+  border-bottom: none;
+}
+// finish the javasctipt part of button
+
+//Title under javascript buttons
+.product-display {
+  padding: 16px 0px;
+  border-bottom: 1px solid lightgrey;
+  p {
+    margin-top: 40px;
+    font-size: 19px;
+    margin-bottom: 0px;
+    font-weight: bold;
+  }
 }
 
 .variant-container {
@@ -146,7 +171,7 @@
   }
 
   .product-display {
-    h4 {
+    p {
       font-size: 16px;
       margin-top: 0px;
       margin-bottom: 0px;
