@@ -34,60 +34,51 @@
         <% end %>
       </div>
     </div>
-    <div class="product-show-details">
-      <button id="myCatButton" onClick="myCatFunction(); toggleCatText(this.id);">Detalles del producto +</button>
-      <div style="display:none;" id="myCatDiv">
-        <p><%= @product.description %></p>
-      </div>
+    <div class="d-flex justify-content-between align-items-center product-show-list" id="button" onclick="showElement()">
+      <p>Detalles del producto</p>
+      <p id="plus">+</p>
     </div>
-    <div class="product-show-details-2">
-      <button id="myComprarButton" onClick="myComprarFunction(); toggleComprarText(this.id);"><p></p> Como comprar +</button>
-      <div style="display:none;" id="myComprarDiv">
-       <p>Una vez que compres el producto , nos comunicaremos con vos para pactar la entrega</p>
-       <p>El pago se puede hacer mediante <strong>transferencia bancaria</strong>  o en <strong>efectivo</strong>  durante la entrega del producto</p>
-       <p><strong>Por el momento el pago con tarjetas no esta disponble</strong></p>
-     </div>
-   </div>
- </div>
+    <div class="none product-show-list-hide" id="show">
+      <p><%= @product.description %></p>
+    </div>
+    <div class="d-flex justify-content-between align-items-center product-shop-list" id="howtoshop" onclick="showElementSecondary()">
+      <p>Como comprar</p>
+      <p id="sum">+</p>
+    </div>
+    <div class="none product-show-list-hide" id="shop">
+      <p>Una vez que compres el producto , nos comunicaremos con vos para pactar la entrega</p>
+      <p>El pago se puede hacer mediante <strong>transferencia bancaria</strong>  o en <strong>efectivo</strong>  durante la entrega del producto</p>
+      <p><strong>Por el momento el pago con tarjetas no esta disponble</strong></p>
+    </div>
+  </div>
 </div>
 <script>
-  function myCatFunction() {
-    var x = document.getElementById("myCatDiv");
-    if (x.style.display === "none") {
-      x.style.display = "block";
+  const showElement = () => {
+    const minus = document.getElementById('plus');
+    if (minus.innerText === '+') {
+      minus.innerText = '-'
     } else {
-      x.style.display = "none";
-    }
+      minus.innerText = '+'
+    };
+    const border = document.querySelector('.product-show-list');
+    border.classList.toggle("border-transparent")
 
-  }
-  function toggleCatText(button_id)  {
-   if (document.getElementById(button_id).innerText == "Detalles del producto +")
-   {
-     document.getElementById(button_id).innerText = "Detalles del producto -";
-   }
-   else
-   {
-     document.getElementById(button_id).innerText = "Detalles del producto +";
-   }
- }
-
- function myComprarFunction() {
-  var x = document.getElementById("myComprarDiv");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+    const button = document.querySelector('#show');
+    button.classList.toggle("show");
   }
 
-}
-function toggleComprarText(button_id)  {
- if (document.getElementById(button_id).innerText == "Como comprar +")
- {
-   document.getElementById(button_id).innerText = "Como comprar -";
- }
- else
- {
-   document.getElementById(button_id).innerText = "Como comprar +";
- }
-}
+  const showElementSecondary = () => {
+    const minus = document.getElementById('sum');
+    if (minus.innerText === '+') {
+      minus.innerText = '-'
+    } else {
+      minus.innerText = '+'
+    };
+    const border = document.querySelector('.product-shop-list');
+    border.classList.toggle("border-transparent")
+
+    const button = document.querySelector('#shop');
+    button.classList.toggle("show");
+  }
 </script>
+
