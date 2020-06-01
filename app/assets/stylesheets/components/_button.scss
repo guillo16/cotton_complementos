@@ -52,36 +52,6 @@
   justify-content: space-between;
 }
 
-#myCatButton {
- background-color: transparent;
- border: none;
- width: 100%;
- font-size: 16px;
- color: black;
- display: flex;
- padding: 0px;
- &:focus {
-  outline: none;
-}
-&:hover {
-  color: #167a92;
-}
-}
-#myComprarButton {
- background-color: transparent;
- border: none;
- width: 100%;
- font-size: 16px;
- color: black;
- display: flex;
- padding: 0px;
- &:focus {
-  outline: none;
-}
-&:hover {
-  color: #167a92;
-}
-}
 
 .btn-gradient {
   color: white;
