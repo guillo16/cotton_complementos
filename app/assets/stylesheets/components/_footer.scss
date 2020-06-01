@@ -2,20 +2,23 @@
   background: white;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 20px 30px;
   color: rgba(0,0,0,0.3);
-  border-top: 1px solid lightgrey;
+  box-shadow: 0px 0px 10px lightgrey;
   margin-top: 60px;
+  padding-bottom: 10px;
 }
 .footer-links {
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
   a {
     color: black;
     opacity: 0.15;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 26px;
     padding: 0px 10px;
     &:hover {
       opacity: 1;
@@ -23,6 +26,25 @@
   }
 }
 
+.footer-copyright {
+  text-align: center;
+  h2 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 2px;
+
+  }
+
+  p {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  h3 {
+    font-size: 13px;
+
+  }
+}
 
 .footer .fa-heart {
   color: #D23333;
