@@ -4,7 +4,15 @@
   <%= cl_image_tag photo.key%>
   <% end %>
   <h2><%= product.title.capitalize %></h2>
-
-  <p><%= humanized_money_with_symbol(product.price) %></p>
+  <div class="d-flex">
+    <% if product.sale.present? %>
+    <p style="color: red;"><%= humanized_money_with_symbol(product.price) %></p>
+    <p style="padding-left: 10px; text-decoration: line-through; color: lightgrey;">$<%= product.sale %></p>
+    <% else %>
+    <p><%= humanized_money_with_symbol(product.price) %></p>
+    <% end %>
+  </div>
   <% end %>
 </div>
+
+
