@@ -41,6 +41,7 @@
 
         <% end %>
         <% end %>
+
         <% stock = @product.variants.sum(:stock) %>
         <% if stock < 1 %>
         <%= link_to 'Encargar', '#' %>
