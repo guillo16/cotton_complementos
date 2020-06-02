@@ -1,10 +1,20 @@
 class ChargesController < ApplicationController
   def index
-    @charges = Charge.all
+    if current_user.admin?
+      @charges = Charge.all
+    else
+      redirect_to root_path
+      flash[:notice] = "Accesso denegado!"
+    end
   end
 
   def show
-    @charge = Charge.find(params[:id])
+    if current_user.admin?
+      @charge = Charge.find(params[:id])
+    else
+      redirect_to root_path
+      flash[:notice] = "Accesso denegado!"
+    end
   end
 
   def create
