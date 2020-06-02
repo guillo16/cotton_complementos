@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'charges/index'
+  get 'charges/show'
+  get 'charges/create'
   get 'payments/new'
   get 'products/search', to: 'products#search'
   devise_for :users
@@ -20,5 +23,7 @@ Rails.application.routes.draw do
   end
   resources :variants, only: [:show, :edit, :update]
   resources :users, only: [:index, :show]
+
+  resources :charges, only: [:index, :show, :create, :destroy]
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

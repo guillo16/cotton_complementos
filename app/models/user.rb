@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :orders
+  has_many :charges
   after_create :send_welcome_email
 
   # Include default devise modules. Others available are:

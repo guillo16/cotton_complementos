@@ -90,6 +90,15 @@
   }
 }
 
+.btn-charge {
+  background-color: #167a92;
+  color: white;
+  &:hover {
+    opacity: 0.9;
+    color: white;
+  }
+}
+
 
 @media(max-width: 688px) {
   .mobile-button-container {

@@ -1,0 +1,33 @@
+<%= render 'shared/main_navbar' %>
+<br><br>
+<div class="charge-container d-flex justify-content-center pt-5">
+  <div class="charge-content">
+    <h2 class="text-center" style="font-size: 24px;
+    font-weight: bold; text-decoration: underline">Encargo</h2>
+    <% @charge.product.photos.first(1).each do |photo| %>
+    <div class="charge-image">
+      <%= cl_image_tag photo.key %>
+    </div>
+    <% end %>
+    <div>
+      <p> <strong>Usuario:</strong> <%= @charge.user.email %></p>
+
+      <p><strong>Producto:</strong> <%= @charge.product.title %></p>
+      <p><strong>Precio:</strong> <%= @charge.product.price %></p>
+    </div>
+    <%= link_to 'Volver', :back, class: 'btn btn-dark btn-block'  %>
+    <%= link_to 'Home', root_path, class: 'btn btn-charge btn-block'  %>
+  </div>
+</div>
+
+<style>
+  .charge-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+  }
+</style>
+
+

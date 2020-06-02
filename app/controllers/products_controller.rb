@@ -19,6 +19,10 @@ class ProductsController < ApplicationController
     end
   end
 
+  def contact
+    @product = Product.find(params[:product_id])
+  end
+
   def search
     if params[:query].present?
       sql_query = " \
@@ -59,7 +63,7 @@ class ProductsController < ApplicationController
 
   def update
     @product.update(product_params)
-    redirect_to products_path
+    redirect_to product_path(@product)
   end
 
   def destroy
