@@ -11,6 +11,8 @@
     <% end %>
     <div>
       <p> <strong>Usuario:</strong> <%= @charge.user.email %></p>
+      <p> <strong>Nombre:</strong> <%= @charge.user.name %> <%= @charge.user.last_name %></p>
+      <p> <strong>Telefono:</strong> <%= @charge.user.phone %></p>
 
       <p><strong>Producto:</strong> <%= @charge.product.title %></p>
       <p><strong>Precio:</strong> <%= @charge.product.price %></p>
