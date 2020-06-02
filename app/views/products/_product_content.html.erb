@@ -41,12 +41,29 @@
 
         <% end %>
         <% end %>
+        <br>
+
 
         <% stock = @product.variants.sum(:stock) %>
         <% if stock < 1 %>
-        <%= link_to 'Encargar', '#' %>
+        <%= form_tag charges_path do %>
+        <%= hidden_field_tag 'product_id', @product.id %>
+        <!-- <select name = "dropdown">
+          <option></option>
+          <option>XS</option>
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+        </select> -->
+        <%= submit_tag 'ENCARGAR', class: 'btn btn-dark btn-lg btn-block' %>
+        <% end %>
         <% else %>
         <% end %>
+
+
+
+
+
       </div>
     </div>
     <div class="d-flex justify-content-between align-items-center product-show-list" id="button" onclick="showElement()">

@@ -11,6 +11,6 @@ class ChargesController < ApplicationController
     product = Product.find(params[:product_id])
     Charge.create!(product: product, user: current_user)
     redirect_to root_path
-    flash[:notice] = "Gracias por su mensaje, lo contactaremos pronto"
+    flash[:notice] = "Producto Encargado, lo contactaremos pronto , Muchas Gracias"
   end
 end
