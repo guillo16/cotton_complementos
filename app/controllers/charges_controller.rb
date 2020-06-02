@@ -24,4 +24,10 @@ class ChargesController < ApplicationController
     redirect_to root_path
     flash[:notice] = "Producto Encargado, lo contactaremos pronto , Muchas Gracias"
   end
+
+  def destroy
+    @charge = Charge.find(params[:id])
+    @charge.destroy
+    redirect_to charges_path
+  end
 end

@@ -24,6 +24,6 @@ Rails.application.routes.draw do
   resources :variants, only: [:show, :edit, :update]
   resources :users, only: [:index, :show]
 
-  resources :charges, only: [:index, :show, :create]
+  resources :charges, only: [:index, :show, :create, :destroy]
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
