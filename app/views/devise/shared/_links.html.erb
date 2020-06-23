@@ -1,6 +1,6 @@
 <%- if devise_mapping.omniauthable? %>
 <%- resource_class.omniauth_providers.each do |provider| %>
-<%= link_to  omniauth_authorize_path(resource_name, provider), class: 'btn btn-facebook btn-block' do %>
+<%= link_to  omniauth_authorize_path(resource_name, provider), class: 'btn btn-facebook btn-block disabled' do %>
 <i class="fab fa-facebook-square"></i>
 <%=  "Ingresar con #{OmniAuth::Utils.camelize(provider)}" %>
 <% end %>
