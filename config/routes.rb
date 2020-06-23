@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get 'charges/create'
   get 'payments/new'
   get 'products/search', to: 'products#search'
-  devise_for :users
+  devise_for :users,
+  controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
   root to: 'pages#home'
   get 'pages/search', to: 'pages#search'
 
