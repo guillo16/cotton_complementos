@@ -99,6 +99,21 @@
   }
 }
 
+.btn-facebook {
+  background-color: #3B5997;
+  color: white;
+  font-weight: bold;
+  i {
+    font-size: 22px;
+  }
+}
+
+.btn-login {
+  background-color: #167a92;
+  color: white;
+  font-weight: bold;
+}
+
 
 @media(max-width: 688px) {
   .mobile-button-container {
