@@ -17,6 +17,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'money-rails'
 gem 'cloudinary', '~> 1.12.0'
+gem 'omniauth-facebook'
 gem 'letter_opener', group: :development
 
 
