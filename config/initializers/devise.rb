@@ -13,8 +13,8 @@ Devise.setup do |config|
     scope: 'email',
     info_fields: 'email, name, last_name',
     image_size: 'square',  # 50x50, guaranteed ratio
-    secure_image_url: true,
-    token_params: { parse: :json }
+    secure_image_url: true
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
