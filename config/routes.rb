@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
   get 'products/search', to: 'products#search'
-  match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
-  match 'auth/failure', to: redirect('/'), via: [:get, :post]
   devise_for :users,
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
