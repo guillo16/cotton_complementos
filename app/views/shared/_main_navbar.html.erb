@@ -8,51 +8,47 @@
   <% end %>
 
   <div class="d-flex align-items-center d-lg-none">
-
-   <div class="cart-item responsive-navbar">
-    <% if total_cart_items %>
-    <%= link_to cart_path(@cart) do %>
-    <span class="icon is-small">
-      <i class="fas fa-shopping-bag"></i>
-    </span>
-    <span><%= cart_count_over_one %></span>
-    <% end %>
-    <% end %>
-
-  </div>
-  <%= link_to pages_search_path do  %>
-  <i class="fas fa-search"></i>
-  <% end %>
-
-</div>
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-  <%  @divisions.each do |division| %>
-  <%= link_to division.title, division_path(division), class: "nav-link" %>
-  <% end %>
-  <% if user_signed_in? %>
-  <%= link_to "Perfil", user_path(current_user), class: "nav-link" %>
-  <% else %>
-  <%= link_to "Iniciar sesión", new_user_session_path, class: "nav-link" %>
-  <% end %>
-</ul>
-</div>
-
-<div class="d-none d-lg-block guillo">
-  <div class="d-flex align-items-center">
-    <div class="cart-item">
-      <% if total_cart_items %>
-      <%= link_to cart_path(@cart), class: "nav-link" do %>
-      <span class="icon is-small">
-        <i class="fas fa-shopping-bag"></i>
-      </span>
-      <span><%= cart_count_over_one %></span>
-      <% end %>
-      <% end %>
+    <div class="cart-item responsive-navbar">
+      <div class="cart-icon">
+        <% if total_cart_items %>
+        <%= link_to cart_path(@cart) do %>
+        <span class="icon is-small">
+          <i class="fas fa-shopping-bag"></i>
+        </span>
+        <span><%= cart_count_over_one %></span>
+        <% end %>
+        <% end %>
+      </div>
     </div>
     <%= link_to pages_search_path do  %>
     <i class="fas fa-search"></i>
     <% end %>
   </div>
-
-</div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <%  @divisions.each do |division| %>
+    <%= link_to division.title, division_path(division), class: "nav-link" %>
+    <% end %>
+    <% if user_signed_in? %>
+    <%= link_to "Perfil", user_path(current_user), class: "nav-link" %>
+    <% else %>
+    <%= link_to "Iniciar sesión", new_user_session_path, class: "nav-link" %>
+    <% end %>
+  </div>
+  <div class="d-none d-lg-block guillo">
+    <div class="d-flex align-items-center">
+      <div class="cart-item">
+        <% if total_cart_items %>
+        <%= link_to cart_path(@cart), class: "nav-link" do %>
+        <span class="icon is-small">
+          <i class="fas fa-shopping-bag"></i>
+        </span>
+        <span><%= cart_count_over_one %></span>
+        <% end %>
+        <% end %>
+      </div>
+      <%= link_to pages_search_path do  %>
+      <i class="fas fa-search"></i>
+      <% end %>
+    </div>
+  </div>
 </div>

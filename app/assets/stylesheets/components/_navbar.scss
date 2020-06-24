@@ -84,7 +84,12 @@
 }
 
 .responsive-navbar {
-  width: 60px;
+  width: 50px;
+  text-align: right;
+  .cart-icon {
+    margin-right: 8px;
+  }
+
 }
 //navbar rest of the pages
 .main-navbar {
@@ -110,6 +115,7 @@ i {
   color: black;
 }
 .navbar-toggler {
+  padding-right: 50px;
   border-color: black !important;
   border: none !important;
     &:focus {
