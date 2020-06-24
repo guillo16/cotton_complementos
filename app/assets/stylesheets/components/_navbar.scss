@@ -31,6 +31,8 @@
   .navbar-toggler {
     background-color: transparent !important;
     border: none !important;
+    padding-right: 50px !important;
+    text-align: left;
     &:focus {
       outline: none !important;
     }
@@ -72,6 +74,7 @@
     color: black;
   }
   .navbar-toggler {
+    padding-right: 50px !important;
     border-color: black !important;
   }
 
@@ -82,7 +85,11 @@
 }
 
 .responsive-navbar {
-  margin-left: -30px;
+  width: 50px;
+  text-align: right;
+  .cart-icon {
+    margin-right: 8px;
+  }
 }
 //navbar rest of the pages
 .main-navbar {
@@ -108,6 +115,7 @@ i {
   color: black;
 }
 .navbar-toggler {
+  padding-right: 50px;
   border-color: black !important;
   border: none !important;
     &:focus {
