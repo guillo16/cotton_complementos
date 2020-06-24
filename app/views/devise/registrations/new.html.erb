@@ -13,21 +13,12 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <div class="d-flex justify-content-between">
-        <div class="mr-3">
-          <p>Nombre</p>
-          <%= f.input :name,
-          required: true,
-          autofocus: true,
-          input_html: { autocomplete: "nombre", class: "form-control form-control" }, label: false %>
-        </div>
-        <div class="ml-3">
-          <p>Apellido</p>
-          <%= f.input :last_name,
-          required: true,
-          autofocus: true,
-          input_html: { autocomplete: "apellido", class: "form-control form-control" }, label: false %>
-        </div>
+      <div class="mr-3">
+        <p>Nombre</p>
+        <%= f.input :name,
+        required: true,
+        autofocus: true,
+        input_html: { autocomplete: "nombre", class: "form-control form-control" }, label: false %>
       </div>
       <div class="pb-5">
         <p>Telefono</p>
