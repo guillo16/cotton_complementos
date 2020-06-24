@@ -31,7 +31,7 @@
   .navbar-toggler {
     background-color: transparent !important;
     border: none !important;
-    width: 90px;
+    padding-right: 50px !important;
     text-align: left;
     &:focus {
       outline: none !important;
@@ -74,6 +74,7 @@
     color: black;
   }
   .navbar-toggler {
+    padding-right: 50px !important;
     border-color: black !important;
   }
 
@@ -89,7 +90,6 @@
   .cart-icon {
     margin-right: 8px;
   }
-
 }
 //navbar rest of the pages
 .main-navbar {
