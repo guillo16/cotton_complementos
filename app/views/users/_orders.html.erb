@@ -11,7 +11,8 @@
 
     </thead>
     <tbody>
-      <% @user.orders.reverse_each do |order| %>
+      <% orders = @user.orders.filter { |order| order.state == 'Encargado' } %>
+      <% orders.reverse_each do |order| %>
       <tr>
         <td><%= order.created_at.strftime('%d/%m/%Y') %></td>
         <td><%= order.amount %></td>
