@@ -36,17 +36,3 @@ class User < ApplicationRecord
     UserMailer.with(user: self).welcome.deliver_now
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
