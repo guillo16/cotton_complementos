@@ -35,13 +35,17 @@
     <h2><%= link_to category.title, category_path(category)%></h2>
     <% end %>
   </div>
-  <div class="product-container">
-    <% @division.categories.each do |category| %>
-    <% category.products.each do |product| %>
-    <%= render 'shared/product_card', product: product %>
-    <% end %>
-    <% end %>
+  <div>
+    <div class="product-container">
+      <% @products.each do |product| %>
+      <%= render 'shared/product_card', product: product %>
+      <% end %>
+    </div>
+    <div class="text-center">
+      <%= paginate @products %>
+    </div>
   </div>
+
 </div>
 <%= render 'shared/main_footer' %>
 
