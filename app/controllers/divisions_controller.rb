@@ -3,5 +3,7 @@ class DivisionsController < ApplicationController
 
   def show
     @division = Division.find(params[:id])
+    categories = @division.categories
+    @products = Product.where(category_id: categories).page params[:page]
   end
 end

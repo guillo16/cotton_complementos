@@ -9,6 +9,7 @@ class Product < ApplicationRecord
   has_many :charges
   validates :photos, presence: true
   validates :description, presence: true
+  paginates_per 4
 
   private
 

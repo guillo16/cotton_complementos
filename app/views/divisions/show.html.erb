@@ -36,11 +36,12 @@
     <% end %>
   </div>
   <div class="product-container">
-    <% @division.categories.each do |category| %>
-    <% category.products.each do |product| %>
+    <% @products.each do |product| %>
     <%= render 'shared/product_card', product: product %>
     <% end %>
-    <% end %>
+  </div>
+  <div class="text-center">
+    <%= paginate @products %>
   </div>
 </div>
 <%= render 'shared/main_footer' %>
