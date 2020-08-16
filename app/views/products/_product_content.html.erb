@@ -6,7 +6,6 @@
     <p><%= @product.category.division.title %> / <%= @product.category.title %></p>
     <h2><%= @product.title.upcase %></h2>
     <div class="d-flex justify-content-center justify-content-lg-start">
-
       <% if @product.sale.present? %>
       <h3 style="color: red; font-weight: bold;"><%= humanized_money_with_symbol(@product.price) %></h3>
       <h3 style="padding-left: 10px; text-decoration: line-through; color: lightgrey;">$<%= @product.sale %></h3>
