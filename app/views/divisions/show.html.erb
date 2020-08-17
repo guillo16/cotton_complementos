@@ -37,7 +37,7 @@
   </div>
   <div>
     <div class="product-container">
-      <% @products.each do |product| %>
+      <% @products.uniq(&:title).each do |product| %>
       <%= render 'shared/product_card', product: product %>
       <% end %>
     </div>

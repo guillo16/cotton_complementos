@@ -136,6 +136,13 @@
   }
 }
 
+//width dropdown container
+.product-width {
+  text-align: left;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
 @media(max-width: 1025px) {
   .product-image {
     img {
@@ -187,6 +194,13 @@
       margin-right: 16px;
     }
   }
+
+  //width dropdown container
+.product-width {
+  text-align: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
 }
 
 

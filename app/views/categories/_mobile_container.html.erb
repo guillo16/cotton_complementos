@@ -32,5 +32,5 @@
       </div>
     </div>
   </div>
-  <p><%= @category.products.count %> productos</p>
+  <p><%= @category.products.uniq(&:title).count %> productos</p>
 </div>

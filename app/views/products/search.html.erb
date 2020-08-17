@@ -1,9 +1,9 @@
 <%= render 'shared/main_navbar' %>
 <div class= "product-search-wrapper">
-  <p><strong>Resultados</strong> (<%= @products.count %>)</p>
+  <p><strong>Resultados</strong> (<%= @products.uniq(&:title).count %>)</p>
 
   <div class= "product-container searcheable">
-    <% @products.each do |product| %>
+    <% @products.uniq(&:title).each do |product| %>
     <%= render 'shared/product_card', product: product %>
     <% end %>
   </div>
