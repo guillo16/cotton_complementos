@@ -1,38 +1,8 @@
 <%= render 'shared/main_navbar' %>
-<% if user_signed_in? %>
-<% if current_user.admin? %>
+<% if user_signed_in? && current_user.admin?%>
 <section id="variants_container">
-  <div class="variant-container">
-    <h2>Crear Talle para <%= @product.title %></h2>
-    <%= render 'variants/new' %>
-    <h2>Inventario de <%= @product.title %></h2>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">Talle</th>
-          <th scope="col">Stock</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @product.variants.each do |variant| %>
-        <% unless variant.stock == 0 %>
-        <tr>
-          <td><%= link_to variant.title, variant_path(variant) %></td>
-          <td><%= variant.stock %></td>
-        </tr>
-        <% end %>
-        <% end %>
-      </tbody>
-    </table>
-    <br><br>
-    <%= link_to 'Editar Producto', edit_product_path(@product), class: 'btn btn-dark btn-lg btn-block'  %>
-    <%= link_to 'Crear Producto', new_product_path, class: 'btn btn-primary btn-lg btn-block'  %>
-    <%= link_to 'Destruir Producto', @product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-lg btn-block' %>
-  </div>
+  <%= render 'admin' %>
 </section>
-<% else %>
-<% end %>
-<% else %>
 <% end %>
 <section id="product-content">
   <%= render 'product_content' %>
@@ -43,11 +13,10 @@
       <p>Tambien te puede interesar</p>
     </div>
     <div class="division-cards-wrapper">
-      <% @products.last(8).each do |product| %>
+      <% @products.last(6).each do |product| %>
       <%= render 'shared/product_home_card', product: product %>
       <% end %>
     </div>
   </div>
 </section>
 <%= render 'shared/main_footer' %>
-
