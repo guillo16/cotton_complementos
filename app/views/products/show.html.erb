@@ -13,7 +13,7 @@
       <p>Tambien te puede interesar</p>
     </div>
     <div class="division-cards-wrapper">
-      <% @products.last(6).each do |product| %>
+      <% @products.uniq(&:title).last(6).each do |product| %>
       <%= render 'shared/product_home_card', product: product %>
       <% end %>
     </div>
