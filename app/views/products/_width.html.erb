@@ -1,0 +1,28 @@
+<div class="width">
+  <div class="btn-group">
+    <button type="button" class="btn btn-login dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <%= @product.width %>
+    </button>
+    <% product_title =  @product.title %>
+    <% product_links = @products.filter { |product| product.title == product_title } %>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <% product_links.each do |g| %>
+
+      <%= link_to  g.width, product_path(g), class: 'dropdown-item' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+<style>
+  .width {
+    text-align: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+</style>
+
+
+
