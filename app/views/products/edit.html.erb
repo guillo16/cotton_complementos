@@ -4,11 +4,13 @@
   <h2>Crear Producto</h2>
   <%= simple_form_for @product do |f| %>
   <p>Nombre</p>
-  <%= f.input :title, placeholder: 'Nombre', label: false, input_html: { class: 'form-control form-control-lg'} %>
+  <%= f.input :title, label: false, input_html: { class: 'form-control form-control-lg'} %>
   <p>Descripcion</p>
-  <%= f.input :description, placeholder: 'Descripcion', label: false, input_html: { class: 'form-control form-control-lg' , id:"exampleFormControlTextarea1", rows:"5" } %>
+  <%= f.input :description, label: false, input_html: { class: 'form-control form-control-lg' , id:"exampleFormControlTextarea1", rows:"5" } %>
   <p>Foto</p>
   <%= f.input :photos, as: :file, label: false, input_html: { multiple: true } %>
+  <p>Medidas (opcional)</p>
+  <%= f.input :width, label: false, input_html: { class: 'form-control form-control-lg'} %>
   <p>Precio</p>
   <%= f.input :price, label: false, input_html: { class: 'form-control form-control-lg'} %>
   <p>Categoria</p>
