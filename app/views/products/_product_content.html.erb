@@ -34,7 +34,7 @@
         <!-- cantidad the stock que hay -->
         <% stock = @product.variants.sum(:stock) %>
         <% if stock >= 1 %>
-        <%= submit_tag 'COMPRAR', class: 'btn btn-login btn-lg btn-block' %>
+        <%= submit_tag 'COMPRAR', class: 'btn btn-dark btn-lg btn-block' %>
         <% else %>
         <button class= 'btn btn-secondary btn-lg btn-block 'disabled>AGOTADO</button>
 
