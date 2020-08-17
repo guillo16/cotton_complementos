@@ -13,7 +13,7 @@
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs">
       <p>Email</p>
-      <%= f.input :email, input_html: { class: "form-control form-control"}, label: false, placeholder: "nombre@mail.com" %>
+      <%= f.input :email, input_html: { class: "form-control form-control"}, label: false %>
       <p>Contraseña</p>
       <%= f.input :password,
       label: false,
