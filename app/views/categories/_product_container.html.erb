@@ -2,7 +2,7 @@
   <div class="product-title d-md-flex justify-content-between">
     <div>
       <h2><%= @category.title %></h2>
-      <p><%= @category.products.count %> productos</p>
+      <p><%= @category.products.uniq(&:title).count %> productos</p>
     </div>
     <div>
       <div class="btn-group">
@@ -21,7 +21,7 @@
     </div>
   </div>
   <div class= "product-container">
-    <% @products.each do |product| %>
+    <% @products.uniq(&:title).each do |product| %>
     <%= render 'shared/product_card', product: product %>
     <% end %>
   </div>
