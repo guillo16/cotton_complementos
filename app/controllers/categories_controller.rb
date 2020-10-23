@@ -22,7 +22,7 @@ class CategoriesController < ApplicationController
     else
       @products
     end
-    @categories = Category.all
+    @categories = Category.includes(:division).all
   end
 
   def new
