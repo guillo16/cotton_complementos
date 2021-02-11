@@ -1,5 +1,10 @@
 class PaymentsController < ApplicationController
-  before_action :set_order
+  before_action :set_order, only: %w[new create]
+
+  def index
+    @payments = Payment.all
+  end
+
   def new
   end
 
@@ -7,6 +12,7 @@ class PaymentsController < ApplicationController
     # DESTROY CART
     @cart = Cart.find(session[:cart_id])
     session[:cart_id] = nil
+    @payment = Payment.create!(title: "nuevo payment", order: @order, user: current_user)
     @order.update(state: 'Encargado')
     OrderMailer.with(order: @order).new_order_email.deliver_later
     redirect_to order_path(@order)

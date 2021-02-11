@@ -1,0 +1,4 @@
+<% @payments.each do |payment| %>
+<%= payment.order.id %>
+<%= payment.user.email %>
+<% end %>
