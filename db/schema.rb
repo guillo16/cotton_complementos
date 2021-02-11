@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_11_184016) do
+ActiveRecord::Schema.define(version: 2021_02_11_210559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,6 +87,8 @@ ActiveRecord::Schema.define(version: 2021_02_11_184016) do
     t.bigint "cart_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "total_cents", default: 0, null: false
+    t.string "total_currency", default: "USD", null: false
     t.index ["cart_id"], name: "index_orders_on_cart_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
@@ -118,13 +120,11 @@ ActiveRecord::Schema.define(version: 2021_02_11_184016) do
   create_table "shippings", force: :cascade do |t|
     t.string "address"
     t.string "phone"
-    t.bigint "cart_id"
-    t.bigint "user_id"
+    t.bigint "order_id"
     t.integer "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["cart_id"], name: "index_shippings_on_cart_id"
-    t.index ["user_id"], name: "index_shippings_on_user_id"
+    t.index ["order_id"], name: "index_shippings_on_order_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -173,7 +173,6 @@ ActiveRecord::Schema.define(version: 2021_02_11_184016) do
   add_foreign_key "payments", "orders"
   add_foreign_key "payments", "users"
   add_foreign_key "products", "categories"
-  add_foreign_key "shippings", "carts"
-  add_foreign_key "shippings", "users"
+  add_foreign_key "shippings", "orders"
   add_foreign_key "variants", "products"
 end

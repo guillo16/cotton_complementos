@@ -11,13 +11,26 @@
     <%= link_to 'Ir al Carrito',cart_path(@cart), class: "btn btn-gradient btn-lg btn-block"  %>
     <% else %>
     <div class="payment-order">
-      <p><strong>TOTAL:</strong><%= humanized_money_with_symbol(@order.amount) %></p>
+      <p><strong>subtotal:</strong><%= humanized_money_with_symbol(@order.amount) %></p>
+      <% unless @order.shipping == nil %>
+      <p><strong>Envio:</strong><%= humanized_money_with_symbol(@order.shipping.amount) %></p>
+      <% end %>
+      <p><strong>Total:</strong><%= humanized_money_with_symbol(@order.total) %></p>
+
+
+
       <form action="<%= order_payments_path(@order) %>" method="POST">
         <%= hidden_field_tag :authenticity_token %>
         <input type="hidden" name='order_id' value=<%= @order.id %>>
-        <button type="submit" class="btn btn-dark btn-lg btn-block" data-transaction-amount="<%= @order.amount %>">Comprar</button>
+        <button type="submit" class="btn btn-dark btn-lg btn-block" data-transaction-amount="<%= @order.total %>">Comprar</button>
       </form>
       <% end %>
     </div>
   </div>
 </div>
+<% unless @order.shipping.valid? %>
+<%= render 'shippings/new' %>
+<% else %>
+<%= @order.shipping.address %>
+<%= link_to 'editar', edit_shipping_path(@order.shipping.id) %>
+<% end %>

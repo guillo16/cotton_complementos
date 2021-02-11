@@ -1,4 +1,5 @@
 <% @payments.each do |payment| %>
+<%= link_to "payment", payment_path(payment) %>
 <%= payment.order.id %>
 <%= payment.user.email %>
 <% end %>

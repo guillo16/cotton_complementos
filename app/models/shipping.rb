@@ -1,4 +1,9 @@
 class Shipping < ApplicationRecord
-  belongs_to :cart
-  belongs_to :user
+  belongs_to :order
+
+  validates :address, presence: true
+  validates :phone, presence: true
+  validates :amount, presence: true
+
+
 end

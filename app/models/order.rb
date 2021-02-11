@@ -5,4 +5,5 @@ class Order < ApplicationRecord
   has_one :shipping
 
   monetize :amount_cents
+  monetize :total_cents
 end

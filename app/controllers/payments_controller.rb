@@ -5,7 +5,12 @@ class PaymentsController < ApplicationController
     @payments = Payment.all
   end
 
+  def show
+    @payment = Payment.find(params[:id])
+  end
+
   def new
+    @shipping = Shipping.new
   end
 
   def create
@@ -24,3 +29,5 @@ class PaymentsController < ApplicationController
     @order = current_user.orders.where(state: 'Pendientes').find(params[:order_id])
   end
 end
+
+

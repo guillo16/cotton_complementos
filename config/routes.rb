@@ -16,12 +16,13 @@ Rails.application.routes.draw do
   resources :carts
 
   resources :orders, only: [:index, :show, :create] do
+    resources :shippings, only: :create
     resources :payments, only: [:new, :create]
   end
   resources :variants, only: [:show, :edit, :update]
   resources :users, only: [:index, :show]
 
   resources :charges, only: [:index, :show, :create, :destroy]
-  resources :payments, only: :index
-  resources :shippings, only: [:new, :create]
+  resources :payments, only: [:index, :show]
+  resources :shippings, only: [:edit, :update]
 end
