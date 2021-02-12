@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_11_210559) do
+ActiveRecord::Schema.define(version: 2021_02_12_160136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,6 +100,14 @@ ActiveRecord::Schema.define(version: 2021_02_11_210559) do
     t.integer "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "payment_id"
+    t.string "payment_status"
+    t.string "payment_status_detail"
+    t.string "processing_mode"
+    t.string "merchant_order_id"
+    t.string "back_url"
+    t.string "merchant_account_id"
+    t.string "authenticity_token"
     t.index ["order_id"], name: "index_payments_on_order_id"
     t.index ["user_id"], name: "index_payments_on_user_id"
   end
