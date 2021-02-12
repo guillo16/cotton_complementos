@@ -10,7 +10,24 @@ class PaymentsController < ApplicationController
   end
 
   def new
+    require 'mercadopago.rb'
+    mp = MercadoPago.new(ENV['ACCESS_TOKEN'])
+    # Crea un objeto de preferencia
+    preference_data = {
+      "items": [
+        {
+          "title": "Total",
+          "unit_price": @order.amount.to_i,
+          "quantity": 1,
+          "currency_id": "ARS"
+        }
+      ]
+    }
+    @preference = mp.create_preference(preference_data)
+    @preference_id = @preference["response"]["id"]
     @shipping = Shipping.new
+    ACCESS_TOKEN=TEST-4172019108926178-021314-b2f2034cf02d63f6135dc75afbea4744-403897306
+
   end
 
   def create
