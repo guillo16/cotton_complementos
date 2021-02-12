@@ -100,7 +100,6 @@ ActiveRecord::Schema.define(version: 2021_02_12_160136) do
     t.integer "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "payment_id"
     t.string "payment_status"
     t.string "payment_status_detail"
     t.string "processing_mode"
