@@ -40,7 +40,6 @@ class PaymentsController < ApplicationController
       redirect_to order_path(@order)
     else
       flash[:notice] = "Pago rechazado intentar de vuelta"
-      @payment = Payment.create!(title: @order.id, order: @order, user: current_user)
       @payment.save
       redirect_to new_order_payment_path(@order)
     end
