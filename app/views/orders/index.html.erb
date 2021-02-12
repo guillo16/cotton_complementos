@@ -29,6 +29,9 @@
     </div>
     <h2><strong>Código Postal: </strong><%= order.user.postal %></h2>
 
+    <br><br><br>
+    <%= order&.shipping&.address %>
+
 
     <% order.cart.line_items.each do |line_item| %>
     <div class="order-index-footer">

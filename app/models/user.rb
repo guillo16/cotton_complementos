@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_many :charges
   after_create :send_welcome_email
+  has_many :payments
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

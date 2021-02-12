@@ -1,0 +1,7 @@
+<% @payments.each do |payment| %>
+<h2><%= link_to "payment", payment_path(payment) %></h2>
+<p><%= payment.order.id %> - <%= payment.user.email %> - <%= payment.created_at %>
+  <h3><%= payment.payment_status %></h3>
+  <h3><%= payment.order.total %> </h3>
+</p>
+<% end %>

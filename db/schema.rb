@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_17_134017) do
+ActiveRecord::Schema.define(version: 2021_02_12_203632) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,23 @@ ActiveRecord::Schema.define(version: 2020_08_17_134017) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "instalments", force: :cascade do |t|
+    t.bigint "order_id"
+    t.bigint "user_id"
+    t.string "payment_status"
+    t.string "payment_id"
+    t.string "payment_status_detail"
+    t.string "processing_mode"
+    t.string "merchant_order_id"
+    t.string "back_url"
+    t.string "merchant_account_id"
+    t.string "authenticity_token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_instalments_on_order_id"
+    t.index ["user_id"], name: "index_instalments_on_user_id"
+  end
+
   create_table "line_items", force: :cascade do |t|
     t.bigint "cart_id"
     t.bigint "product_id"
@@ -87,8 +104,28 @@ ActiveRecord::Schema.define(version: 2020_08_17_134017) do
     t.bigint "cart_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "total_cents", default: 0, null: false
+    t.string "total_currency", default: "USD", null: false
     t.index ["cart_id"], name: "index_orders_on_cart_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "order_id"
+    t.string "title"
+    t.integer "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "payment_status"
+    t.string "payment_status_detail"
+    t.string "processing_mode"
+    t.string "merchant_order_id"
+    t.string "back_url"
+    t.string "merchant_account_id"
+    t.string "authenticity_token"
+    t.index ["order_id"], name: "index_payments_on_order_id"
+    t.index ["user_id"], name: "index_payments_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -102,6 +139,16 @@ ActiveRecord::Schema.define(version: 2020_08_17_134017) do
     t.integer "sale"
     t.string "width"
     t.index ["category_id"], name: "index_products_on_category_id"
+  end
+
+  create_table "shippings", force: :cascade do |t|
+    t.string "address"
+    t.string "phone"
+    t.bigint "order_id"
+    t.integer "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_shippings_on_order_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -142,11 +189,16 @@ ActiveRecord::Schema.define(version: 2020_08_17_134017) do
   add_foreign_key "categories", "divisions"
   add_foreign_key "charges", "products"
   add_foreign_key "charges", "users"
+  add_foreign_key "instalments", "orders"
+  add_foreign_key "instalments", "users"
   add_foreign_key "line_items", "carts"
   add_foreign_key "line_items", "products"
   add_foreign_key "line_items", "variants"
   add_foreign_key "orders", "carts"
   add_foreign_key "orders", "users"
+  add_foreign_key "payments", "orders"
+  add_foreign_key "payments", "users"
   add_foreign_key "products", "categories"
+  add_foreign_key "shippings", "orders"
   add_foreign_key "variants", "products"
 end
